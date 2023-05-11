@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './navbar.module.css';
-import notificationIcon from '../assets/images/notification.png';
-import profileIcon from '../assets/images/user.png';
+import notificationIcon from '../../assets/images/notification.png';
+import profileIcon from '../../assets/images/user.png';
 
 function Navbar() {
   return (

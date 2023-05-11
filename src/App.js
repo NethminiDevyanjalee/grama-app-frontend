@@ -1,6 +1,6 @@
-import Navbar from './components/Navbar';
-import Notification from './pages/Notification';
-import Help from './pages/Help';
+import Navbar from './view/components/Navbar';
+import Notification from './view/pages/Notification';
+import Help from './view/pages/Help';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
