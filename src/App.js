@@ -2,9 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./view/pages/Home";
 import Application from "./view/pages/Application";
 
-import Navbar from './components/Navbar';
+import Navbar from './view/components/Navbar';
 import Notification from './pages/Notification';
-import Help from './pages/Help';
+import Help from './view/pages/Help';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -19,14 +19,9 @@ function App() {
           <Route path="/notifications" element={<Notification />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/application" element={<Application />} />
         </Routes>
       </div>
-    </Router>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/application" element={<Application />}></Route>
-      </Routes>
     </Router>
   );
 }
