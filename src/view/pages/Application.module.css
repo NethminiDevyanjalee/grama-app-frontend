@@ -6,7 +6,7 @@
     background-color: #fff;
     overflow: hidden;
   }
-  .application {
+  .applicationHeader {
     color: #000113;
     font-size: 44px;
     font-weight: 800;
@@ -21,110 +21,11 @@
     height: 80px;
     flex-direction: column;
   }
-  .copyright2023 {
-    position: absolute;
-    left: 30px;
-    top: 799px;
-    width: min-content;
-    height: min-content;
-    text-align: center;
-    align-items: center;
-    white-space: nowrap;
-    flex-direction: column;
-  }
-  .labelWrapper {
-    font-size: 14px;
-    font-family: Noto Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    flex-shrink: 1;
-  }
-  .label {
-    color: #294a84b2;
-    font-size: 14px;
-    font-weight: 600;
-    font-family: Noto Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    letter-spacing: 0.35px;
-    text-transform: uppercase;
-  }
-  .label2 {
-    color: #294a84b2;
-    font-size: 14px;
-    font-weight: 600;
-    font-family: Noto Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    letter-spacing: 0.35px;
-    text-transform: capitalize;
-  }
-  .rectangle6Copy51220 {
-    position: absolute;
-    left: 84.162%;
-    right: 0.6304%;
-    top: 0.1202%;
-    bottom: 92.7885%;
-    overflow: visible;
-    filter: drop-shadow(0px 2px 4px #3d3aa665);
-  }
-  .icon {
+  .applicationIcon {
     width: 100%;
     height: 100%;
   }
-  .rectangle82 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 1280px;
-    height: 61px;
-    background-color: #294a84;
-  }
-  .notification {
-    position: absolute;
-    left: 1098.8899px;
-    top: 15px;
-    width: 24.8267px;
-    height: 30px;
-    overflow: visible;
-  }
-  .icon2 {
-    width: 100%;
-    height: 100%;
-  }
-  .lOGO {
-    color: #cfe3ed;
-    font-size: 18px;
-    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    position: absolute;
-    left: 1.3476%;
-    right: 93.2943%;
-    top: calc(50% - 381.5px);
-    height: min-content;
-    flex-direction: column;
-    transform: translateY(-50%);
-  }
-  .rectangle83 {
-    position: absolute;
-    left: 44.0625%;
-    right: 51.4321%;
-    top: 6.7308%;
-    bottom: 92.6683%;
-    background-color: #fff;
-  }
-  .frame7 {
-    position: absolute;
-    left: 1184px;
-    top: 15px;
-    width: 30px;
-    height: 30px;
-    overflow: visible;
-  }
-  .icon3 {
-    width: 100%;
-    height: 100%;
-  }
-  .applyTodayForTheGramaCertifica {
+  .applicationDescription {
     color: #294a84;
     font-size: 24px;
     font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
@@ -137,7 +38,7 @@
     white-space: nowrap;
     flex-direction: column;
   }
-  .saveButton {
+  .applicationSubmitButton {
     position: absolute;
     left: 108px;
     top: 560px;
@@ -145,7 +46,7 @@
     height: 38px;
     align-items: flex-start;
   }
-  .saveButton2 {
+  .submitButton {
     position: absolute;
     left: 0;
     right: 0;
@@ -156,18 +57,7 @@
     border-radius: 18px;
     background-color: #294a84;
   }
-  .saveButton3 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    outline: solid 3px #294a84;
-    outline-offset: -3px;
-    border-radius: 18px;
-    background-color: #294a84;
-  }
-  .frame46 {
+  .submitFrame {
     position: absolute;
     left: calc(50% - -0.5px);
     top: 50%;
@@ -177,7 +67,7 @@
     gap: 20px;
     transform: translate(-50%, -50%);
   }
-  .submit {
+  .submitDescription {
     color: #fff;
     font-size: 16px;
     font-weight: 500;
@@ -188,27 +78,19 @@
     white-space: nowrap;
     flex-direction: column;
   }
-  .envelope {
+  .submitIcon {
     width: 17.5px;
     height: 15.5px;
     overflow: visible;
   }
-  .icon4 {
-    width: 100%;
-    height: 100%;
-  }
-  .undraw_personal_file_re_5joy1 {
+  .applicationImage {
     position: absolute;
     left: 611px;
     top: 230px;
     width: 603px;
     height: 459px;
   }
-  .icon5 {
-    width: 100%;
-    height: 100%;
-  }
-  .frame51 {
+  .formFrame { 
     position: absolute;
     left: 108px;
     top: 332px;
@@ -218,13 +100,13 @@
     align-items: flex-start;
     gap: 30px;
   }
-  .frame49 {
+  .formField {
     position: relative;
     width: 413px;
     height: 67px;
     align-items: flex-start;
   }
-  .iD {
+  .formLabel {
     color: #294a84b2;
     font-size: 16px;
     font-weight: 500;
@@ -238,7 +120,7 @@
     white-space: nowrap;
     flex-direction: column;
   }
-  .firstNameBox {
+  .formInput {
     position: absolute;
     left: 0;
     top: 29px;
@@ -249,38 +131,7 @@
     border-radius: 5px;
     background-color: #fff;
   }
-  .frame50 {
-    position: relative;
-    width: 413px;
-    height: 67px;
-    align-items: flex-start;
-  }
-  .address {
-    color: #294a84b2;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: min-content;
-    height: min-content;
-    white-space: nowrap;
-    flex-direction: column;
-  }
-  .firstNameBox2 {
-    position: absolute;
-    left: 0;
-    top: 29px;
-    width: 413px;
-    height: 38px;
-    outline: solid 1px #294a84b2;
-    outline-offset: -1px;
-    border-radius: 5px;
-    background-color: #fff;
-  }
-  .editProfile {
+  .applicationFormFrame  {
     position: absolute;
     left: calc(50% - 316px);
     top: 272px;
@@ -291,68 +142,9 @@
     border-radius: 14px;
     transform: translateX(-50%);
   }
-  .frame6 {
-    position: absolute;
-    left: calc(50% - -0.5px);
-    top: 16px;
-    width: 341px;
-    height: 29px;
-    align-items: flex-start;
-    gap: 55px;
-    transform: translateX(-50%);
-  }
-  .home {
-    color: #fff;
-    font-size: 14px;
-    line-height: 30px;
-    font-weight: 500;
-    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    width: min-content;
-    height: min-content;
-    white-space: nowrap;
-    flex-direction: column;
-  }
-  .apply {
-    color: #fff;
-    font-size: 14px;
-    line-height: 30px;
-    font-weight: bold;
-    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    width: 47px;
-    height: min-content;
-    flex-direction: column;
-  }
-  .status {
-    color: #fff;
-    font-size: 14px;
-    line-height: 30px;
-    font-weight: 500;
-    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    width: min-content;
-    height: min-content;
-    white-space: nowrap;
-    flex-direction: column;
-  }
-  .help {
-    color: #fff;
-    font-size: 14px;
-    line-height: 30px;
-    font-weight: 500;
-    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    width: 38.8785px;
-    height: min-content;
-    flex-direction: column;
-  }
+  
+  
+  
+ 
+  
   
