@@ -2,8 +2,11 @@ import resets from '../resets.module.css';
 import classes from './Home.module.css';
 import homeImage from '../../assets/images/homeImage.svg';
 import arrowIcon from '../../assets/images/arrowIcon.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+    const navigate = useNavigate();
+
     return (
         <div className={`${resets.storybrainResets} ${classes.root}`}>
             <div className={classes.homeHeader}>
@@ -25,7 +28,7 @@ export default function Home() {
             <div className={classes.homeImage}>
                 <img src={homeImage} alt="HomeImage" className={classes.homeIcon} />
             </div>
-            <button className={classes.homeApplyButton}>
+            <button className={classes.homeApplyButton} onClick={() => navigate('/apply')}>
                 <div className={classes.applyButton}></div>
                 <div className={classes.applyFrame}>
                     <div className={classes.applyDescription}>APPLY</div>

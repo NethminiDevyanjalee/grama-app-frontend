@@ -81,6 +81,7 @@
     width: 166px;
     height: 43.2055px;
     align-items: flex-start;
+    cursor: pointer;
   }
   .applyButton {
     position: absolute;
