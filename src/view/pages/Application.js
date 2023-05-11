@@ -1,7 +1,7 @@
 import resets from '../resets.module.css';
 import classes from './Application.module.css';
-import submitIcon from '../../images/submitIcon.png';
-import applicationImage from '../../images/applicationImage.svg';
+import submitIcon from '../../assets/images/submitIcon.png';
+import applicationImage from '../../assets/images/applicationImage.svg';
 
 export default function Application() {
     return(

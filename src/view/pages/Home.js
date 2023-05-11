@@ -1,7 +1,7 @@
 import resets from '../resets.module.css';
 import classes from './Home.module.css';
-import homeImage from '../../images/homeImage.svg';
-import arrowIcon from '../../images/arrowIcon.png';
+import homeImage from '../../assets/images/homeImage.svg';
+import arrowIcon from '../../assets/images/arrowIcon.png';
 
 export default function Home() {
     return (
