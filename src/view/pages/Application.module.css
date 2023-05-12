@@ -45,6 +45,7 @@
     width: 146px;
     height: 38px;
     align-items: flex-start;
+    cursor: pointer;
   }
   .submitButton {
     position: absolute;
@@ -130,6 +131,11 @@
     outline-offset: -1px;
     border-radius: 5px;
     background-color: #fff;
+    padding: 5px;
+    padding-left: 10px;
+  }
+  .formError {
+    color: #FF0000;
   }
   .applicationFormFrame  {
     position: absolute;
