@@ -1,0 +1,47 @@
+.notificationPage {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(255, 127, 127);
+  }
+  
+.leftColumn {
+    flex: 1;
+    padding: 20px;
+}
+
+.rightColumn {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightColumn img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+textArea {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .notification-page {
+        flex-direction: column;
+    }
+}
+  
