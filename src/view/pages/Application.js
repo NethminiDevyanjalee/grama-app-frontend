@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import resets from '../resets.module.css';
 import classes from './Application.module.css';
 import submitIcon from '../../assets/images/submitIcon.png';
@@ -8,6 +9,7 @@ export default function Application() {
     const [id, setId] = useState('');
     const [address, setAddress] = useState('');
     const [error, setError] = useState('');
+    const navigate = useNavigate();
 
     const handleIdChange = (event) => {
         setId(event.target.value);
@@ -30,7 +32,7 @@ export default function Application() {
             return;
           }
 
-        window.location.href = '/status';
+          navigate('/status');
     };
 
     return(
@@ -40,7 +42,6 @@ export default function Application() {
             <form onSubmit={handleSubmit}>
                 <div className={classes.applicationFormFrame }></div>
                 <div className={classes.formFrame}>
-                    <div className={classes.formError}>{error}</div>
                     <div className={classes.formField}>
                         <div className={classes.formLabel}>ID</div>
                         <input type="text" className={classes.formInput} value={id} placeholder='Enter ID' onChange={handleIdChange} />                    
@@ -49,6 +50,7 @@ export default function Application() {
                         <div className={classes.formLabel}>Address</div>
                         <input type="text" className={classes.formInput}  value={address} placeholder='Enter Address' onChange={handleAddressChange} />
                     </div>
+                    <div className={classes.formError}>{error}</div>
                 </div>
                 <button type="submit" className={classes.applicationSubmitButton}>
                     <div className={classes.submitButton}></div>
