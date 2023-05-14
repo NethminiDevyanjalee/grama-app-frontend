@@ -1,0 +1,127 @@
+/* Common CSS */
+
+.page-layout {
+    display: flex;
+    flex-direction: row;
+    padding: 70px;
+}
+
+h1 {
+    padding: 0;
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 66px;
+    letter-spacing: 0.35px;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 146px;
+    height: 38px;
+    box-sizing: border-box;
+    background-color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    border-radius: 18px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.copyright {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.35px;
+    text-transform: uppercase;
+    color: rgba(41, 74, 132, 0.7);
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .page-layout {
+        flex-direction: column;
+    }
+}
+
+/* Help Page CSS */
+
+.help-left-column {
+    flex: 1;
+}
+
+.help-right-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.help-right-column img {
+    width: 535px;
+    height: 363px;
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 100px;
+}
+
+.help-description {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0;
+    margin-top: 50px;
+    color: var(--primary-color);
+}
+
+.message-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    margin-top: 24px;
+    color: rgba(41, 74, 132, 0.7);
+}
+
+.help-textarea {
+    width: 503px;
+    height: 213px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(41, 74, 132, 0.7);
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--primary-color);
+}
+
+.help-textarea::placeholder {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(41, 74, 132, 0.5);
+    padding-left: 18px;
+    padding-top: 10px;
+}
+
+.send-icon {
+    width: 17.5px;
+    height: 15.5px;
+    margin-right: 5px;
+}
+  

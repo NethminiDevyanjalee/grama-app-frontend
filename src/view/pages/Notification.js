@@ -1,25 +1,39 @@
-import customerSupport from '../../assets/images/customer_support.png'
 import './notification.page.css'
-import envelope from '../../assets/images/envelope.png'
+import notification from '../../assets/images/note.png'
+import saveIcon from '../../assets/images/save.png'
+import React, { useState } from 'react'
 
 function Notification() {
+
+    const [isToggled, setIsToggled] = useState(false);
+
+    const toggleButton = () => {
+        setIsToggled(!isToggled);
+    };
+
     return (
         <div>
-            <div className="notificationPage">
-                
-                <div className="leftColumn">
-                    <h1>Need some Help?</h1>
-                    <h2>Just write us a message!</h2>
-                    <h3>Fill up the form and our team will get back to<br></br> you within 24 hours.</h3>
-                    <p>Message</p>
-                    <textarea placeholder="Write your message..."></textarea>
+            <div className="page-layout">
+                <div className="notification-left-column">
+                    <h1>Notification Settings</h1>
+                    <h2>Customise notification to your preference</h2>
+                    <div className="toggle-section">
+                        <div>
+                            <h3 className="notification-type">Turn on notifications</h3>
+                            <p className="notification-description">Receive a notification for every status change</p>
+                        </div>
+                        <label className="switch">
+                            <input type="checkbox" onChange={toggleButton} checked={isToggled} />
+                            <span className="slider round"></span>
+                        </label>
+                    </div>
                     <button>
-                        Send
-                        <img src={envelope} className="icon"></img>
+                        Save
+                        <img src={saveIcon} className="save-icon" alt="Envelope Icon"></img>
                     </button>
                 </div>
-                <div className="rightColumn">
-                    <img src={customerSupport} alt="Customer Support" />
+                <div className="notification-right-column">
+                    <img src={notification} alt="Customer Support" />
                 </div>
             </div> 
             <p className="copyright">Copyright @2023</p>        
