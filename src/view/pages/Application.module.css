@@ -16,7 +16,7 @@
     text-transform: capitalize;
     position: absolute;
     left: 70px;
-    top: 134px;
+    top: 70px;
     width: 800px;
     height: 80px;
     flex-direction: column;
@@ -32,7 +32,7 @@
       'Liberation Sans', sans-serif;
     position: absolute;
     left: 70px;
-    top: 200px;
+    top: 136px;
     width: min-content;
     height: min-content;
     white-space: nowrap;
@@ -41,7 +41,7 @@
   .applicationSubmitButton {
     position: absolute;
     left: 108px;
-    top: 560px;
+    top: 496px;
     width: 146px;
     height: 38px;
     align-items: flex-start;
@@ -87,14 +87,14 @@
   .applicationImage {
     position: absolute;
     left: 611px;
-    top: 230px;
+    top: 166px;
     width: 603px;
     height: 459px;
   }
   .formFrame { 
     position: absolute;
     left: 108px;
-    top: 332px;
+    top: 268px;
     width: 413px;
     height: min-content;
     flex-direction: column;
@@ -140,7 +140,7 @@
   .applicationFormFrame  {
     position: absolute;
     left: calc(50% - 316px);
-    top: 272px;
+    top: 208px;
     width: 508px;
     height: 416px;
     outline: solid 1px #294a8480;

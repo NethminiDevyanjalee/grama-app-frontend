@@ -9,7 +9,7 @@
   .homeHeader {
     position: absolute;
     left: 70px;
-    top: 164px;
+    top: 70px;
     width: 931px;
     height: 80px;
     flex-direction: column;
@@ -40,7 +40,7 @@
   .homeDescription1 {
     position: absolute;
     left: 70px;
-    top: 300px;
+    top: 210px;
     width: 570px;
     height: min-content;
     flex-direction: column;
@@ -48,7 +48,7 @@
   .homeDescription2 {
     position: absolute;
     left: 70px;
-    top: 400px;
+    top: 310px;
     width: 570px;
     height: min-content;
     flex-direction: column;
@@ -65,7 +65,7 @@
   .homeImage {
     position: absolute;
     left: 664px;
-    top: 301px;
+    top: 211px;
     width: 595.9998px;
     height: 439.0001px;
     overflow: visible;
@@ -77,7 +77,7 @@
   .homeApplyButton {
     position: absolute;
     left: 70px;
-    top: 545px;
+    top: 455px;
     width: 166px;
     height: 43.2055px;
     align-items: flex-start;
