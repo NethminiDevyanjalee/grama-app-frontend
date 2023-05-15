@@ -34,7 +34,7 @@ function Help() {
 
     return (
         <div>
-            <div className="page-layout">
+            <div className="help-page-layout">
                 <div className="help-left-column">
                     <h1>Need some Help?</h1>
                     <h2>Just write us a message!</h2>

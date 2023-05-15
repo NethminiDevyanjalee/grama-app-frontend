@@ -4,7 +4,7 @@
     display: flex;
 }
   
-.navItem {
+.nav-item {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -15,7 +15,7 @@
     list-style: none;
 }
 
-.navIcons {
+.nav-icons {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -25,13 +25,13 @@
     margin-right: 40px;
 }
 
-.navIcon {
+.nav-icon {
     width: 24px;  
     height: 24px;
     margin: 20px;
 }
 
-.navLink {
+.nav-link {
     text-decoration: none;
     width: 44px;
     font-family: 'Poppins';
@@ -42,13 +42,14 @@
     line-height: 30px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #760505;
     flex: none;
     order: 1;
     flex-grow: 0;
 }
 
-.navLink.active:after {
+.nav-ink .active:after {
+    font-weight: bold;
     content: "";
     position: absolute;
     bottom: -5px;
@@ -57,7 +58,7 @@
     margin: auto;
     width: 10px;
     height: 3px;
-    background-color: white;
+    background-color: rgb(214, 4, 4);
 }
 
 
