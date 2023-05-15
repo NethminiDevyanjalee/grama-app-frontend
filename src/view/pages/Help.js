@@ -1,8 +1,37 @@
 import customerSupport from '../../assets/images/customer_support.png'
 import './help.page.css'
 import envelope from '../../assets/images/envelope.png'
+import Swal from 'sweetalert2'
+import React, { useState } from 'react'
 
 function Help() {
+
+    const [message, setMessage] = useState('');
+
+    const handleMessageChange = (event) => {
+        setMessage(event.target.value);
+    };
+
+    const handleSend = () => {
+        if (message.trim() === '') {
+          Swal.fire({
+            title: 'Empty Message',
+            text: 'Please enter a message before sending.',
+            icon: 'warning',
+            confirmButtonText: 'OK',
+          });
+        } else {
+          Swal.fire({
+            title: 'Message Sent',
+            text: 'Your message has been sent successfully!',
+            icon: 'success',
+            confirmButtonText: 'OK',
+          });
+          setMessage(''); // Clear the message box
+        }
+    };
+      
+
     return (
         <div>
             <div className="page-layout">
@@ -16,9 +45,11 @@ function Help() {
                     <p className="message-text">Message</p>
                     <textarea 
                         className="help-textarea" 
-                        laceholder="Write your message...">
-                    </textarea>
-                    <button>
+                        placeholder="Write your message..."
+                        value={message}
+                        onChange={handleMessageChange}
+                    ></textarea>
+                    <button onClick={handleSend}>
                         Send
                         <img src={envelope} className="send-icon" alt="Envelope Icon"></img>
                     </button>

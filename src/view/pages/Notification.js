@@ -2,6 +2,8 @@ import './notification.page.css'
 import notification from '../../assets/images/note.png'
 import saveIcon from '../../assets/images/save.png'
 import React, { useState } from 'react'
+import Swal from 'sweetalert2'
+
 
 function Notification() {
 
@@ -9,6 +11,16 @@ function Notification() {
 
     const toggleButton = () => {
         setIsToggled(!isToggled);
+    };
+
+    const handleSave = () => {
+        Swal.fire({
+          title: 'Save',
+          text: 'Changes saved successfully!',
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonClass: 'swal2-confirm'
+        });
     };
 
     return (
@@ -27,7 +39,7 @@ function Notification() {
                             <span className="slider round"></span>
                         </label>
                     </div>
-                    <button>
+                    <button onClick={handleSave}>
                         Save
                         <img src={saveIcon} className="save-icon" alt="Envelope Icon"></img>
                     </button>

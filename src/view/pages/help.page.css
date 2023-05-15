@@ -1,5 +1,9 @@
 /* Common CSS */
 
+.swal2-confirm {
+    background-color: var(--primary-color) !important;
+}
+
 .page-layout {
     display: flex;
     flex-direction: row;
