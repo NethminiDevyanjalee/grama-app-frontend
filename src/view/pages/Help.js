@@ -30,7 +30,7 @@ function Help() {
             fetch(url, {
                 method: 'POST',
                 headers: {
-                'API-Key': 'eyJraWQiOiJnYXRld2F5X2NlcnRpZmljYXRlX2FsaWFzIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIyOWYyNmI4MS0xY2YwLTQzOWUtYjI5OS0wNGNiODFkODg3MDdAY2FyYm9uLnN1cGVyIiwiaXNzIjoiaHR0cHM6XC9cL3N0cy5jaG9yZW8uZGV2OjQ0M1wvb2F1dGgyXC90b2tlbiIsImtleXR5cGUiOiJQUk9EVUNUSU9OIiwic3Vic2NyaWJlZEFQSXMiOlt7InN1YnNjcmliZXJUZW5hbnREb21haW4iOm51bGwsIm5hbWUiOiJHcmFtYSBBcHAgLSBFbmRwb2ludCA5MDkwIDgwMyIsImNvbnRleHQiOiJcL2ViZWMxOGVjLWI3ZGMtNGVhMy04ZGNkLWFlNGRlZDIzMzQwYVwvZ2V3cFwvZ3JhbWEtYXBwXC9lbmRwb2ludC05MDkwLTgwM1wvMi4wLjAiLCJwdWJsaXNoZXIiOiJjaG9yZW9fcHJvZF9hcGltX2FkbWluIiwidmVyc2lvbiI6IjIuMC4wIiwic3Vic2NyaXB0aW9uVGllciI6bnVsbH1dLCJleHAiOjE2ODQyMTk3ODgsInRva2VuX3R5cGUiOiJJbnRlcm5hbEtleSIsImlhdCI6MTY4NDIxOTE4OCwianRpIjoiOTdhMDEwMzAtMWIyZi00N2ZkLWFhMDctMmYwNTQ5ZDgwZDY3In0.Ux9aGQbWAdCeJq7dKcxCa53H9UMJlGZh_SrvWgoIV2N7vqicz_F2RylUtb55jPbUOUWQnJHF-nPh6M3Hx8uzMVlmQ2NDxa4GVBcHJhyydtyERHpR-fA0cgW1_L7GfQwIKn6QiDRDVWYtUBhqAlTerQr9xPIciTCa9B2wXcs7mOOIDtu2JRilrbI6JAv6PNkxlM67a5ZOKigFbaLYoiOJHDH4fqUEOvXJDik3DZvgl9ay4NCUT0o2D33E9qtj80kpOeVtWtlzptNjqbQ5RE-k93VpMHaNR5NX-VxpRqSg8T-Il_NHLjTt-SJ-NU_b867wmIwrhzhmrRjdqZxjbE5i5folf-fK73ufSOD-h5sEkc3grtEEcrwVH_fUPAKpV9BuITRrCqzkUXPtr7oZPaER6KfSwEvLgy_HtrgqHHS9LWQ5AukFl9GU8jg6r-tZKZ6UYUd-uHVoAgBpdDDMis8Vn2f5MN7VifotXXCczZB3cO9uOBYgQtDu1G6L4uotZTsEyM1tSun8fJtr4cq0S7tMNaFHrPy6gJEuqp077hbShB26G77cIe2VOjPSJdhY9k3i-lTVLP_meQZE_4GugikK0QgXQtCUnL34LXXDM5gtJdyXhD_JQRCmAYCt1xztgjC7H4qv7SB4N_7Bdch1Bzemtglz6VrGaciUtbiTGiSsW8g',
+                'API-Key': 'ADD-API-KEY-HERE',
                 'accept': 'text/plain'
             },
             })
