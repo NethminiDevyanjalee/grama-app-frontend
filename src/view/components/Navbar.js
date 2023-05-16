@@ -27,7 +27,7 @@ function Navbar() {
     <div>
       <nav className="navbar">
         <ul className="nav-item">
-          <li><NavLink exact to="/" activeClassName="active" className="nav-link">Home</NavLink></li>
+          <li><NavLink to="/" activeclassname="active" className="nav-link">Home</NavLink></li>
           <li><NavLink to="/apply" className="nav-link">Apply</NavLink></li>
           <li><NavLink to="/status" className="nav-link">Status</NavLink></li>
           <li><NavLink to="/help" className="nav-link">Help</NavLink></li>
