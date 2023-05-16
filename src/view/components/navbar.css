@@ -42,23 +42,31 @@
     line-height: 30px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: #760505;
+    color: #ffffff;
     flex: none;
-    order: 1;
+    order: 1;   
     flex-grow: 0;
 }
 
-.nav-ink .active:after {
+.nav-link.active {
     font-weight: bold;
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 10px;
-    height: 3px;
-    background-color: rgb(214, 4, 4);
 }
 
+.indicator {
+    position: absolute;
+    margin-top: 57px;
+    width: 57px;
+    height: 5px;
+    transition: 0.5s;
+    left: -5px;
+}
 
+.indicator::before {
+    content: "";
+    position: absolute;
+    width: 57px;
+    height: 5px;
+    bottom: 1px;
+    left: 0;
+    background-color: white;
+}

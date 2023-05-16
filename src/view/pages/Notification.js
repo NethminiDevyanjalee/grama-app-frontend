@@ -1,4 +1,4 @@
-import './notification.page.css'
+import './notification_page.css'
 import notification from '../../assets/images/note.png'
 import saveIcon from '../../assets/images/save.png'
 import React, { useState } from 'react'

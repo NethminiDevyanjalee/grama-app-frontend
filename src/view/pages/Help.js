@@ -1,5 +1,5 @@
 import customerSupport from '../../assets/images/customer_support.png'
-import './help.page.css'
+import './help_page.css'
 import envelope from '../../assets/images/envelope.png'
 import Swal from 'sweetalert2'
 import React, { useState } from 'react'
