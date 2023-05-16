@@ -4,6 +4,7 @@ import resets from '../resets.module.css';
 import classes from './Application.module.css';
 import submitIcon from '../../assets/images/submitIcon.png';
 import applicationImage from '../../assets/images/applicationImage.svg';
+import { API_KEY, Base_URL } from '../../config/api';
 
 export default function Application() {
     const [id, setId] = useState('');
@@ -19,7 +20,7 @@ export default function Application() {
         setAddress(event.target.value);
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         if (!id) {
@@ -32,7 +33,33 @@ export default function Application() {
             return;
           }
 
-          navigate('/status');
+          try {
+            const headers = {
+                'API-Key': API_KEY,
+                'accept': 'text/plain'
+            }
+
+            const identityCheckResponse = await fetch(`${Base_URL}/identitycheck?userId=${id}`, {
+                method: 'GET',
+                headers: headers,
+            });
+
+            const addressCheckResponse = await fetch(`${Base_URL}/addresscheck?userId=${id}&address=${address}`, {
+                method: 'GET',
+                headers: headers,
+            });
+
+            const policeCheckResponse = await fetch(`${Base_URL}/policecheck?userId=${id}`, {
+                method: 'GET',
+                headers: headers,
+            });
+
+            navigate('/status');
+        } catch (error) {
+            setError('⚠ An error occurred while submitting the form');
+            console.error(error);
+        }
+
     };
 
     return(
