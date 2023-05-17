@@ -5,6 +5,7 @@ import classes from './Application.module.css';
 import submitIcon from '../../assets/images/submitIcon.png';
 import applicationImage from '../../assets/images/applicationImage.svg';
 import { API_KEY, Base_URL } from '../../config/api';
+import Swal from 'sweetalert2';
 
 export default function Application() {
     const [id, setId] = useState('');
@@ -36,7 +37,7 @@ export default function Application() {
           try {
             const headers = {
                 'API-Key': API_KEY,
-                'accept': 'text/plain'
+                'accept': '*/*'
             }
 
             const identityCheckResponse = await fetch(`${Base_URL}/identitycheck?userId=${id}`, {
@@ -54,7 +55,20 @@ export default function Application() {
                 headers: headers,
             });
 
-            navigate('/status');
+            if (!identityCheckResponse.ok || !addressCheckResponse.ok || !policeCheckResponse.ok) {
+                setError('⚠ Something went wrong');
+                return;
+            }
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Applied Successfully',
+                text: 'You will be redirected to the status page.',
+                showConfirmButton: false,
+                timer: 2000,
+            }).then(() => {
+                navigate('/status');
+            });
         } catch (error) {
             setError('⚠ An error occurred while submitting the form');
             console.error(error);
