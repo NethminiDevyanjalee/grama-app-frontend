@@ -2,22 +2,22 @@ import Navbar from './view/components/Navbar';
 import Notification from './view/pages/Notification';
 import Help from './view/pages/Help';
 import Landing from './view/pages/Landing';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
     <Router>
       <div>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/apply" element={<Apply />} />
-          <Route path="/status" element={<Status />} />
-          <Route path="/notifications" element={<Notification />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/help" element={<Help />} />
-        </Routes>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route path="/home" component={Home} />
+          <Route path="/apply" component={Apply} />
+          <Route path="/status" component={Status} />
+          <Route path="/notifications" component={Notification} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/help" component={Help} />
+        </Switch>
       </div>
     </Router>
   );
