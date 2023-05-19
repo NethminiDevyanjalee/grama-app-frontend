@@ -1,4 +1,4 @@
-import resets from '../resets.module.css';
+import main from '../main.module.css';
 import classes from './Home.module.css';
 import homeImage from '../../assets/images/homeImage.svg';
 import arrowIcon from '../../assets/images/arrowIcon.png';
@@ -8,7 +8,7 @@ export default function Home() {
     const navigate = useNavigate();
 
     return (
-        <div className={`${resets.storybrainResets} ${classes.root}`}>
+        <div className={`${main.gramaApp} ${classes.root}`}>
             <div className={classes.homeHeader}>
                 <p className={classes.headerWrapper}>
                     <span className={classes.headerLabel1}>Welcome to </span>

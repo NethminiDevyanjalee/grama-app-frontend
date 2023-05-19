@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import resets from '../resets.module.css';
+import main from '../main.module.css';
 import classes from './Application.module.css';
 import submitIcon from '../../assets/images/submitIcon.png';
 import applicationImage from '../../assets/images/applicationImage.svg';
@@ -77,7 +77,7 @@ export default function Application() {
     };
 
     return(
-        <div className={`${resets.storybrainResets} ${classes.root}`}>
+        <div className={`${main.gramaApp} ${classes.root}`}>
             <div className={classes.applicationHeader}>Application</div>
             <div className={classes.applicationDescription}>Apply today for the Grama Certificate</div>
             <form onSubmit={handleSubmit}>

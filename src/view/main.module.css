@@ -1,5 +1,5 @@
-.storybrainResets,
-.storybrainResets * {
+.gramaApp,
+.gramaApp * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -11,26 +11,26 @@
   overflow-wrap: anywhere;
 }
 
-.storybrainResets,
-.storybrainResets :not(span, a, ul, ol, li, p) {
+.gramaApp,
+.gramaApp :not(span, a, ul, ol, li, p) {
   display: flex;
 }
 
-.storybrainResets ul,
-.storybrainResets ol {
+.gramaApp ul,
+.gramaApp ol {
   text-indent: 0;
   padding-inline-start: 1.5em;
 }
 
-.storybrainResets p:empty::before {
+.gramaApp p:empty::before {
   content: '';
   display: inline-block;
 }
 
-.storybrainResets img {
+.gramaApp img {
   object-fit: contain;
 }
 
-.storybrainResets svg {
+.gramaApp svg {
   overflow: visible;
 }
