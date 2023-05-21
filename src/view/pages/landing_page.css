@@ -1,0 +1,39 @@
+/* Landing page css */
+
+.background-img {
+    width: 100%;
+    height: 768px;
+    object-fit: cover;
+    position: absolute;
+}
+
+.landing-title {
+    padding-top: 30px;
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 66px;
+    letter-spacing: 0.35px;
+    text-transform: capitalize;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.landing-subtitle {
+    padding-top: 56px;
+    padding-bottom: 70px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.landing-left-column {
+    flex: 1;
+}
+
+.arrow-icon {
+    width: 16.76px;
+    height: 12px;
+    margin-right: 5px;
+}
