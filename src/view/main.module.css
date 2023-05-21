@@ -1,0 +1,36 @@
+.gramaApp,
+.gramaApp * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.gramaApp,
+.gramaApp :not(span, a, ul, ol, li, p) {
+  display: flex;
+}
+
+.gramaApp ul,
+.gramaApp ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+.gramaApp p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+.gramaApp img {
+  object-fit: contain;
+}
+
+.gramaApp svg {
+  overflow: visible;
+}
