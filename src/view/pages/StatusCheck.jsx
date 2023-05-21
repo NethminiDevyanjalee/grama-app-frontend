@@ -22,7 +22,7 @@ function StatusCheck() {
         method: "GET",
         headers: {
           "API-Key":
-            "add_your_api_key",
+            "ADD_YOUR_API-KEY",
           accept: "text/plain",
         },
       });
