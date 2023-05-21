@@ -1,0 +1,309 @@
+.swal2-confirm {
+  background-color: var(--primary-color) !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins';
+}
+
+.MainProfileContainer{
+ margin: 1% 20% 1% 10%;
+
+}
+
+.MainHeading {
+  display:flex;
+  opacity: 1;
+  font-size: 44px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  text-align: left;
+  line-height: 66px;
+  letter-spacing: 0.35px;
+  text-transform: capitalize;
+  color: #000113;
+
+}
+
+.SubHeading {
+  display: flex;
+  margin: 1% 44% 1% 0%;
+  opacity: 1;
+  font-size: 24px;
+  text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px;
+  color: #294A84;
+}
+
+.ContainerOne {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.FormInputContainer {
+  flex: 1;
+  display:flexbox;
+  background: #FFFFFF;
+}
+
+@media (max-width: 480px) {
+  .FormInputContainer {
+    width: 80%; 
+    height: 60%; 
+    padding: 5% 5% 40% 10%;
+  
+  }
+}
+
+.RightSideContainer {
+  flex: 1;
+  width: 690px;
+  height: 430px;
+  opacity: 1;
+  position: relative;
+  border: 0.5px solid rgba(41,74,132,0.699999988079071);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+@media (max-width: 480px) {
+  .RightSideContainer {
+    width: 100%; 
+    height: auto; 
+    padding: 10% 10% 50% 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ContainerOne {
+    flex-direction: column; 
+  }
+}
+
+.ProfilePic {
+  margin-top: 10%;
+  border-radius: 50%;
+  width: 185px;
+  height: 185px;
+  position: center;
+  border: 1.5px solid #294A84;
+
+}
+
+.ProPicFileTypeContainer {
+  margin-top: 2%;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;  
+  color: rgba(41, 74, 132, 0.7);
+}
+
+
+.ProfileDetailsContainer {
+  margin-top: auto;
+ 
+}
+
+.infoIcon {
+  height: 15px;
+  width: 20px;
+  padding-right: 5px;
+  color: #294A84;
+}
+
+.DisplayFullName {
+  display: flex;
+  position: absolute;
+  margin: 2% 10% auto 10%;
+  text-align: center;
+  width: 269.5px;
+  height: 24px;
+  left: calc(50% - 269.5px/2 + 0.25px);
+  top: 290px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: #294A84;
+}
+
+.emailIcon {
+  width: 25.5px;
+  height: 15.5px;
+}
+
+.DisplayEmailAddress {
+  display: flex;
+  text-align: center;
+  padding: 0px;
+  gap: 10px; 
+  position: absolute;
+  width: 269.5px;
+  height: 24px;
+  left: calc(50% - 269.5px/2 + 0.25px);
+  top: 340px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(41, 74, 132, 0.8);
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.DisplayMobileNumber {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 15px;
+  position: absolute;
+  width: 157.42px;
+  height: 24px;
+  left: calc(50% - 157.42px/2 + 0.21px);
+  top: 373px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(41, 74, 132, 0.8);
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.ButtonContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 2% 0;
+  gap: 15px;
+  position: absolute;
+  width: 307px;
+  height: 38px;
+}
+
+.SaveButton {
+  width: 146px;
+  height: 38px;
+  background-color: rgba(41,74,132,1);
+  opacity: 1;
+  border: 3px solid rgba(41,74,132,1);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  overflow: hidden;
+  color: white;
+  padding: 8px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.CancelButton {
+  width: 146px;
+  height: 38px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  border: 3px solid rgba(41,74,132,1);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  overflow: hidden;
+  color:rgba(41,74,132,1);
+  padding: 8px 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #294A84;
+    flex: none;
+    order: 0;
+    /* flex-grow: 0; */
+}
+
+
+label {
+  width: 400px;
+  color: rgba(41,74,132,1);
+  font-family: Poppins;
+  font-weight: medium;
+  font-size: 16px;
+  opacity: 1;
+  text-align: left;
+  display: block;
+  margin-bottom: 2%;
+}
+
+
+input[type=text],
+input[type=email],
+input[type=tel] {
+  height: 40px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  border: 1px solid rgba(41,74,132,1);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow:scroll;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  resize: vertical;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #294A84;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=tel]:focus {
+  border: 2px solid rgba(41,74,132,1);
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #294A84;
+}
