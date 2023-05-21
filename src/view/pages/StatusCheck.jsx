@@ -22,7 +22,7 @@ function StatusCheck() {
         method: "GET",
         headers: {
           "API-Key":
-            "eyJraWQiOiJnYXRld2F5X2NlcnRpZmljYXRlX2FsaWFzIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJiYTljOGJmNS04NzI5LTQzNTAtOTk3Zi1iZjdiYmU5NzY4NWFAY2FyYm9uLnN1cGVyIiwiaXNzIjoiaHR0cHM6XC9cL3N0cy5jaG9yZW8uZGV2OjQ0M1wvb2F1dGgyXC90b2tlbiIsImtleXR5cGUiOiJQUk9EVUNUSU9OIiwic3Vic2NyaWJlZEFQSXMiOlt7InN1YnNjcmliZXJUZW5hbnREb21haW4iOm51bGwsIm5hbWUiOiJHcmFtYSBBcHAgLSBFbmRwb2ludCA5MDkwIDgwMyIsImNvbnRleHQiOiJcL2ViZWMxOGVjLWI3ZGMtNGVhMy04ZGNkLWFlNGRlZDIzMzQwYVwvZ2V3cFwvZ3JhbWEtYXBwXC9lbmRwb2ludC05MDkwLTgwM1wvMS4wLjAiLCJwdWJsaXNoZXIiOiJjaG9yZW9fcHJvZF9hcGltX2FkbWluIiwidmVyc2lvbiI6IjEuMC4wIiwic3Vic2NyaXB0aW9uVGllciI6bnVsbH1dLCJleHAiOjE2ODQzMTc0NjAsInRva2VuX3R5cGUiOiJJbnRlcm5hbEtleSIsImlhdCI6MTY4NDMxNjg2MCwianRpIjoiOWY1NDQ3MTEtNzEyNC00OTkyLWE2NDQtYmIwM2QwZWZiZjM3In0.m2uad4KteIviaIO5COlmRHQLs6boR8PhehJENpn2Sl7ziSKuF9qBBNwY8E5VNU5xHEJO3vKyH6w_jqOnfVm7ArX9WsLBlvLIeru52yUk06lsmum4QnuQ9M_yPsGbxfOoQq8d-9UMXV_xIfdNU6glz05c-ZaujjFN8_RwWLBnFnRWUxOkgIoPvwG8stnZa8gpD5CrPJG6ydxweVp2d64heJsZS0mEGgQXdwA8_ZyDJf02OL_N0Pin3LgujypN5hzr1OalUsbmwM0P045w3m0f5h87StGGxnB9S03dYdLV2ikf73_ZOeWGrSNLQsiBaArcjGEr6Rn2yDb7djhMbOWn4_nKb-qOP2SjRN8bRlkZl6YKslo2DAtXns36jsIqBN4O-ZSI2R5cHm5CY34qMN1mGfMklmbj80zOVj1toUpluTc5asjSzWO-l48mMg0cQDQP0hcrs23ml9TLO_CG5Glrd-WOWPHNKnioSmJhEIgW1vtSwiKdm-z9Y3IoEew_EHu52NJ_ZhFoq60znyyNrUzqEPueKYZ04KZLP2wrSUyiSH49o8xnKHHTfrVcalUsiH3W2P_bKoOOM1aTqJHcbmKcJBilG3YzCsQjvaYU1Uy3Q5kDuuEhGRAodPTOHj0I2tIAVLNHSRx3BRiSf-0TFxwseUTUZHSZcyFAjBcUVxirB1E",
+            "add_your_api_key",
           accept: "text/plain",
         },
       });
@@ -103,7 +103,11 @@ function StatusCheck() {
             </div>
           )}
           <div className="progress-bar-label pending">
-            <img src={pendingIcon} alt="Pending" className="pendingIcon" />
+            <img 
+              src={pendingIcon} 
+              alt="Pending" 
+              className="pendingIcon" 
+            />
           </div>
           <div className="progress-bar-label need-more-info">
             <img
