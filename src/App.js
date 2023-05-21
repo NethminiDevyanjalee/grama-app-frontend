@@ -1,7 +1,9 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./view/pages/Home";
+import Application from "./view/pages/Application";
 import Navbar from './view/components/Navbar';
 import Notification from './view/pages/Notification';
 import Help from './view/pages/Help';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
@@ -10,7 +12,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/apply" element={<Apply />} />
+          <Route path="/apply" element={<Application />} />
           <Route path="/status" element={<Status />} />
           <Route path="/notifications" element={<Notification />} />
           <Route path="/profile" element={<Profile />} />
@@ -19,14 +21,6 @@ function App() {
       </div>
     </Router>
   );
-}
-
-function Home() {
-  return <h1>Welcome to the home page!</h1>;
-}
-
-function Apply() {
-  return <h1>About us</h1>;
 }
 
 function Status() {

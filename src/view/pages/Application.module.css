@@ -1,0 +1,156 @@
+.root {
+    position: relative;
+    width: 1280px;
+    height: 832px;
+    align-items: flex-start;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  .applicationHeader {
+    color: #000113;
+    font-size: 44px;
+    font-weight: 800;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    letter-spacing: 0.35px;
+    text-transform: capitalize;
+    position: absolute;
+    left: 70px;
+    top: 70px;
+    width: 800px;
+    height: 80px;
+    flex-direction: column;
+  }
+  .applicationIcon {
+    width: 100%;
+    height: 100%;
+  }
+  .applicationDescription {
+    color: #294a84;
+    font-size: 24px;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    position: absolute;
+    left: 70px;
+    top: 136px;
+    width: min-content;
+    height: min-content;
+    white-space: nowrap;
+    flex-direction: column;
+  }
+  .applicationSubmitButton {
+    position: absolute;
+    left: 108px;
+    top: 496px;
+    width: 146px;
+    height: 38px;
+    align-items: flex-start;
+    cursor: pointer;
+  }
+  .submitButton {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    outline: solid 3px #294a84;
+    outline-offset: -3px;
+    border-radius: 18px;
+    background-color: #294a84;
+  }
+  .submitFrame {
+    position: absolute;
+    left: calc(50% - -0.5px);
+    top: 50%;
+    width: min-content;
+    height: min-content;
+    align-items: center;
+    gap: 20px;
+    transform: translate(-50%, -50%);
+  }
+  .submitDescription {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    width: min-content;
+    height: min-content;
+    white-space: nowrap;
+    flex-direction: column;
+  }
+  .submitIcon {
+    width: 17.5px;
+    height: 15.5px;
+    overflow: visible;
+  }
+  .applicationImage {
+    position: absolute;
+    left: 611px;
+    top: 166px;
+    width: 603px;
+    height: 459px;
+  }
+  .formFrame { 
+    position: absolute;
+    left: 108px;
+    top: 268px;
+    width: 413px;
+    height: min-content;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  .formField {
+    position: relative;
+    width: 413px;
+    height: 67px;
+    align-items: flex-start;
+  }
+  .formLabel {
+    color: #294a84b2;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: min-content;
+    height: min-content;
+    white-space: nowrap;
+    flex-direction: column;
+  }
+  .formInput {
+    position: absolute;
+    left: 0;
+    top: 29px;
+    width: 413px;
+    height: 38px;
+    outline: solid 1px #294a84b2;
+    outline-offset: -1px;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 5px;
+    padding-left: 10px;
+  }
+  .formError {
+    color: #FF0000;
+  }
+  .applicationFormFrame  {
+    position: absolute;
+    left: calc(50% - 316px);
+    top: 208px;
+    width: 508px;
+    height: 416px;
+    outline: solid 1px #294a8480;
+    outline-offset: -1px;
+    border-radius: 14px;
+    transform: translateX(-50%);
+  }
+  
+  
+  
+ 
+  
+  
