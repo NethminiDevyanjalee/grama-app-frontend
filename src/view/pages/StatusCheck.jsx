@@ -19,11 +19,10 @@ function StatusCheck() {
   const fetchData = async () => {
     try {
       const response = await fetch(url, {
-        method: "GET",
+        method: 'GET',
         headers: {
-          "API-Key":
-            "ADD_YOUR_API-KEY",
-          accept: "text/plain",
+          'API-Key' : 'ADD YOURS HERE',
+          'accept': 'text/plain'
         },
       });
 
@@ -63,22 +62,22 @@ function StatusCheck() {
     }
   };
 
-  const isValidStatus = (status) => {
-    const expectedStatusValues = [
-      "processing",
-      "pending",
-      "need-more-info",
-      "completed",
-    ];
-    return expectedStatusValues.includes(status);
-  };
+  // const isValidStatus = (status) => {
+  //   const expectedStatusValues = [
+  //     "processing",
+  //     "pending",
+  //     "need-more-info",
+  //     "completed",
+  //   ];
+  //   return expectedStatusValues.includes(status);
+  // };
 
   useEffect(() => {
     fetchData();
   }, []);
 
   useEffect(() => {
-    console.log("status" + statusData);
+    console.log(statusData);
   }, [statusData]);
 
   return (
