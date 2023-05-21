@@ -3,6 +3,7 @@ import Home from "./view/pages/Home";
 import Application from "./view/pages/Application";
 import Navbar from './view/components/Navbar';
 import Notification from './view/pages/Notification';
+import UserProfileDetails from './view/pages/UserProfileDetails'
 import Help from './view/pages/Help';
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
           <Route path="/apply" element={<Application />} />
           <Route path="/status" element={<Status />} />
           <Route path="/notifications" element={<Notification />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile" element={<UserProfileDetails />} />
           <Route path="/help" element={<Help />} />
         </Routes>
       </div>
@@ -25,10 +26,6 @@ function App() {
 
 function Status() {
   return <h1>Contact us</h1>;
-}
-
-function Profile() {
-  return <h1>User Profile</h1>;
 }
 
 export default App;
