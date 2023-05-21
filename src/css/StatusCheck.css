@@ -96,45 +96,6 @@
   display: flex;
   justify-content: space-around;
 }
-/* .progress-bar-slider {
-} */
-
-/* .active-pending {
-  display: inline-block;
-  width: 42px;
-  height: 42px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 50%;
-  position: relative;
-  top: -18px;
-  background-color: #294a84;
-} */
-
-/* .active-pending::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(320deg);
-  width: 18px;
-  height: 9px;
-  border: 3px solid white;
-  border-top: none;
-  border-right: none;
-} */
-
-/* .progress-bar-status.selected:before {
-  content: "";
-  display: block;
-  width: 42px;
-  height: 42px;
-  background-color: #294A84;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 50%;
-  position: absolute;
-  top: -3px;
-  left: -3px;
-} */
 
 .progress-bar-status.pending {
   left: 20%;
