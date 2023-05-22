@@ -86,6 +86,7 @@ function UserProfileDetails() {
   };
 
   return (
+    <div>
     <div className="MainProfileContainer">
       <h1 className="MainHeading">User Profile Details</h1>
       <h2 className="SubHeading">Customize Your Profile</h2>
@@ -219,6 +220,8 @@ function UserProfileDetails() {
           </div>
         </div>
       </div>
+    </div>
+    <p className="copyright">Copyright @2023</p>  
     </div>
   );
 }
