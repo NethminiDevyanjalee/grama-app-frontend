@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from 'react'
 import Home from "./view/pages/Home";
 import Application from "./view/pages/Application";
 import Navbar from './view/components/Navbar';
@@ -6,6 +7,7 @@ import Notification from './view/pages/Notification';
 import UserProfileDetails from './view/pages/UserProfileDetails'
 import Help from './view/pages/Help';
 import Landing from './view/pages/Landing';
+import StatusCheck from "./view/pages/StatusCheck";
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />
           <Route path="/apply" element={<Application />} />
-          <Route path="/status" element={<Status />} />
+          <Route path="/status" element={<StatusCheck />} />
           <Route path="/notifications" element={<Notification />} />
           <Route path="/profile" element={<UserProfileDetails />} />
           <Route path="/help" element={<Help />} />
@@ -24,10 +26,6 @@ function App() {
       </div>
     </Router>
   );
-}
-
-function Status() {
-  return <h1>Contact us</h1>;
 }
 
 export default App;
