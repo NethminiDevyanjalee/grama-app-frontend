@@ -8,6 +8,7 @@ import UserProfileDetails from './view/pages/UserProfileDetails'
 import Help from './view/pages/Help';
 import Landing from './view/pages/Landing';
 import StatusCheck from "./view/pages/StatusCheck";
+import CopyrightView from "./view/components/CopyrightView";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/profile" element={<UserProfileDetails />} />
           <Route path="/help" element={<Help />} />
         </Routes>
+        <CopyrightView />
       </div>
     </Router>
   );

@@ -48,17 +48,6 @@ button {
     color: #FFFFFF;
 }
 
-.copyright {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 19px;
-    letter-spacing: 0.35px;
-    text-transform: uppercase;
-    color: rgba(41, 74, 132, 0.7);
-    margin-left: 30px;
-    margin-bottom: 15px;
-}
-
 @media screen and (max-width: 768px) {
     .page-layout {
         flex-direction: column;
