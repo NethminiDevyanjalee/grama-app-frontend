@@ -3,40 +3,43 @@ import { NavLink, useLocation } from 'react-router-dom';
 import notificationIcon from '../../assets/images/notification.png'
 import profileIcon from '../../assets/images/user.png'
 import React, { useState, useEffect } from 'react';
+import Box from '@mui/material/Box';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+
+function LinkTab(props) {
+  return (
+    <Tab
+      component="a"
+      onClick={(event) => {
+        event.preventDefault();
+      }}
+      {...props}
+    />
+  );
+}
 
 function Navbar() {
 
-  const [activeLink, setActiveLink] = useState('');
-  const location = useLocation();
+  const [value, setValue] = React.useState(0);
 
-  useEffect(() => {
-    setActiveLink(location.pathname);
-  }, [location]);
-
-  useEffect(() => {
-    const indicator = document.querySelector('.indicator');
-    const activeNavLink = document.querySelector('.nav-link.active');
-    if (activeNavLink) {
-      const { offsetLeft, offsetWidth } = activeNavLink;
-      indicator.style.transform = `translateX(${offsetLeft}px)`;
-      indicator.style.width = `${offsetWidth}px`;
-    }
-  }, [activeLink]);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   return (
     <div>
       <nav className="navbar">
-        <ul className="nav-item">
-          <li><NavLink to="/home" activeclassname="active" className="nav-link">Home</NavLink></li>
-          <li><NavLink to="/apply" className="nav-link">Apply</NavLink></li>
-          <li><NavLink to="/status" className="nav-link">Status</NavLink></li>
-          <li><NavLink to="/help" className="nav-link">Help</NavLink></li>
-          <div className="indicator"></div>
-        </ul>
-        <ul className="nav-icons">
-          <li><NavLink to="/notifications"><img className="nav-icon" src={notificationIcon} alt="Notification" /></NavLink></li>
-          <li><NavLink to="/profile"><img className="nav-icon" src={profileIcon} alt="Profile" /></NavLink></li>
-        </ul>
+        <Box className="nav-item" sx={{ width: '100%' }}>
+          <Tabs indicatorColor={"white"} textColor={"white"} value={value} onChange={handleChange} aria-label="nav tabs example">
+            <Tab label="Home" component={NavLink} to="/home" />
+            <Tab label="Apply" component={NavLink} to="/apply" />
+            <Tab label="Status" component={NavLink} to="/status" />
+            <Tab label="Help" component={NavLink} to="/help" />
+            <Tab className="nav-icon gap" component={NavLink} to="/notifications" icon={<img src={notificationIcon} alt="Notification" />} />
+            <Tab className="nav-icon" component={NavLink} to="/profile" icon={<img src={profileIcon} alt="Profile" />} />
+          </Tabs>
+        </Box>
       </nav>  
     </div>
   );

@@ -6,6 +6,7 @@ import Notification from './view/pages/Notification';
 import UserProfileDetails from './view/pages/UserProfileDetails'
 import Help from './view/pages/Help';
 import Landing from './view/pages/Landing';
+import AdminPanel from './view/pages/AdminPanel';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/notifications" element={<Notification />} />
           <Route path="/profile" element={<UserProfileDetails />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/admin" element={<AdminPanel />} />
         </Routes>
       </div>
     </Router>
