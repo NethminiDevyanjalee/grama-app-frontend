@@ -20,8 +20,7 @@ function Landing() {
                         <img src={arrowIcon} className="arrow-icon" alt="Envelope Icon"></img>
                     </button>
                 </div>
-            </div> 
-            <p className="copyright">Copyright @2023</p>        
+            </div>       
         </div>
     );
 }

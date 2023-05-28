@@ -1,3 +1,9 @@
+
+.MainStatusBox {
+  margin: 3% 0% 10% 0%;
+  margin-top: 70px;
+}
+
 .main-heading {
   display: flex;
   width: 800px;

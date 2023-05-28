@@ -3,6 +3,7 @@ import { useLocation, NavLink } from 'react-router-dom';
 import notificationIcon from '../../assets/images/notification.png'
 import profileIcon from '../../assets/images/user.png'
 import React, { useEffect, useState } from 'react';
+import logo from '../../assets/images/logo.png'
 import { AuthenticatedComponent } from "@asgardeo/auth-react";
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
@@ -40,12 +41,13 @@ function Navbar() {
     <div>
       <nav className="navbar">
           <AuthenticatedComponent>
+            <img src={logo} alt="Logo" className='logo'/>
             <Box className="nav-item" sx={{ width: '100%' }}>
               <Tabs indicatorColor={"inherit"} textColor={"inherit"} value={value} onChange={handleChange} aria-label="nav tabs example">
-                <Tab label="Home" component={NavLink} to="/home" />
+                <Tab label="Home" component={NavLink} to="/home" sx={{marginLeft: '350px'}}/>
                 <Tab label="Apply" component={NavLink} to="/apply" />
                 <Tab label="Status" component={NavLink} to="/status" />
-                <Tab label="Help" component={NavLink} to="/help" />
+                <Tab label="Help" component={NavLink} to="/help" sx={{marginRight: '350px'}} />
                 <Tab className="nav-icon gap" component={NavLink} to="/notifications" icon={<img src={notificationIcon} alt="Notification" />} />
                 <Tab className="nav-icon" component={NavLink} to="/profile" icon={<img src={profileIcon} alt="Profile" />} />
               </Tabs>

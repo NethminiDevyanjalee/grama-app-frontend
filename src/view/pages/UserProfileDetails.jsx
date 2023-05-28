@@ -10,7 +10,7 @@ import phone from "../../assets/images/phone.png";
 import Swal from "sweetalert2";
 import { BasicUserInfo, useAuthContext } from "@asgardeo/auth-react"
 
-import "../../css/UserProfileDetails.css";
+import "./UserProfileDetails.css";
 
 function UserProfileDetails() {
 
@@ -92,138 +92,143 @@ function UserProfileDetails() {
   };
 
   return (
-    <div className="MainProfileContainer">
-      <h1 className="MainHeading">User Profile Details</h1>
-      <div className="SubHeading">
-        <h2>Customize Your Profile</h2>
-        <button className="LogoutButton" onClick={() => signOut()}>Logout</button>
-      </div>
-
-      <div className="ContainerOne">
-        <div className="FormInputContainer">
-          <div className="FirstNameContainer">
-            <label className="FirstNameLabel">
-              First Name:
-              <input
-                type="text"
-                className="FirstNameInput"
-                value={firstName}
-                onChange={(event) => setFirstName(event.target.value)}
-              />
-            </label>
-          </div>
-          <div className="LastNameContainer">
-            <label className="LastNameLabel">
-              Last Name:
-              <input
-                type="text"
-                className="LastNameInput"
-                value={lastName}
-                onChange={(event) => setLastName(event.target.value)}
-              />
-            </label>
-          </div>
-          <div className="EmailContainer">
-            <label className="EmailLabel">
-              Email:
-              <input
-                type="email"
-                className="EmailInput"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-              />
-            </label>
-          </div>
-          <div className="MobileNumberContainer">
-            <label className="MobileNumberLabel">
-              Mobile Number:
-              <input
-                type="tel"
-                className="MobileNumberInput"
-                value={mobileNumber}
-                onChange={(event) => setMobileNumber(event.target.value)}
-              />
-            </label>
-          </div>
-          <div className="ButtonContainer">
-            <button
-              type="submit"
-              className="SaveButton"
-              onClick={handleSubmit}
-              style={{ marginRight: "10px" }}
-            >
-              Save{" "}
-              <img
-                src={saveIcon}
-                alt="Pending"
-                style={{ paddingLeft: "5px" }}
-              />
-            </button>
-            <button
-              type="button"
-              className="CancelButton"
-              onClick={handleCancel}
-            >
-              Cancel{" "}
-              <img
-                src={cancelIcon}
-                alt="Pending"
-                style={{ paddingLeft: "5px" }}
-              />
-            </button>
-          </div>
+    <div>
+      <div className="MainProfileContainer">
+        <h1 className="MainHeading">User Profile Details</h1>
+        <div className="SubHeading">
+          <h2>Customize Your Profile</h2>
+          <button className="LogoutButton" onClick={() => signOut()}>Logout</button>
         </div>
-
-        <div className="RightSideContainer">
-          <div className="ProPicContainer">
-            <img
-              className="ProfilePic"
-              alt=""
-              src={profilePicture ? URL.createObjectURL(profilePicture) : ""}
-              style={{
-                maxWidth: "100%",
-                maxHeight: "200px",
-                objectFit: "cover",
-              }}
-            />
+        <div className="ContainerOne">
+          <div className="FormInputContainer">
+            <div className="FirstNameContainer">
+              <label className="FirstNameLabel">
+                First Name:
+                <input
+                  type="text"
+                  className="FirstNameInput"
+                  value={firstName}
+                  onChange={(event) => setFirstName(event.target.value)}
+                />
+              </label>
+            </div>
+            <div className="LastNameContainer">
+              <label className="LastNameLabel">
+                Last Name:
+                <input
+                  type="text"
+                  className="LastNameInput"
+                  value={lastName}
+                  onChange={(event) => setLastName(event.target.value)}
+                />
+              </label>
+            </div>
+            <div className="EmailContainer">
+              <label className="EmailLabel">
+                Email:
+                <input
+                  type="email"
+                  className="EmailInput"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                />
+              </label>
+            </div>
+            <div className="MobileNumberContainer">
+              <label className="MobileNumberLabel">
+                Mobile Number:
+                <input
+                  type="tel"
+                  className="MobileNumberInput"
+                  value={mobileNumber}
+                  onChange={(event) => setMobileNumber(event.target.value)}
+                />
+              </label>
+            </div>
+            <div className="ButtonContainer">
+              <button
+                type="submit"
+                className="SaveButton"
+                onClick={handleSubmit}
+                style={{ marginRight: "10px" }}
+              >
+                Save{" "}
+                <img
+                  src={saveIcon}
+                  alt="Pending"
+                  style={{ paddingLeft: "5px" }}
+                />
+              </button>
+              <button
+                type="button"
+                className="CancelButton"
+                onClick={handleCancel}
+              >
+                Cancel{" "}
+                <img
+                  src={cancelIcon}
+                  alt="Pending"
+                  style={{ paddingLeft: "5px" }}
+                />
+              </button>
+            </div>
           </div>
-          <label className="ProPicFileTypeContainer">
-            <input
-              type="file"
-              accept=".jpg,.png"
-              onChange={handleProfilePictureChange}
-              style={{ display: "none" }}
-            />
-            <img
-              src={cameraIcon}
-              alt="file upload icon"
-              className="cameraIcon"
-              onClick={() => {
-                document
-                  .querySelector(".ProPicFileTypeContainer input")
-                  .click();
-              }}
-            />
-            <div>
-              <img src={infoIcon2} alt="Need More Info" className="infoIcon" />
-              JPG/PNG images accepted.
-            </div>
-          </label>
 
-          <div className="ProfileDetailsContainer">
-            <div className="DisplayFullName">{`${firstName} ${lastName}`}</div>
-            <div className="DisplayEmailAddress">
+          <div className="RightSideContainer">
+            <div className="ProPicContainer">
               <img
-                src={envelope}
-                alt="Pending"
-                style={{ paddingLeft: "5px" }}
-                className="emailIcon"
-              />{" "}
-              {email}
+                className="ProfilePic"
+                alt=""
+                src={profilePicture ? URL.createObjectURL(profilePicture) : ""}
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "200px",
+                  objectFit: "cover",
+                }}
+              />
             </div>
-            <div className="DisplayMobileNumber">
-              <img src={phone} alt="Pending" style={{ paddingLeft: "5px" }} />
-              {mobileNumber}
+            <label className="ProPicFileTypeContainer">
+              <input
+                type="file"
+                accept=".jpg,.png"
+                onChange={handleProfilePictureChange}
+                style={{ display: "none" }}
+              />
+              <img
+                src={cameraIcon}
+                alt="file upload icon"
+                className="cameraIcon"
+                onClick={() => {
+                  document
+                    .querySelector(".ProPicFileTypeContainer input")
+                    .click();
+                }}
+              />
+              <div>
+                <img
+                  src={infoIcon2}
+                  alt="Need More Info"
+                  className="infoIcon"
+                />
+                JPG/PNG images accepted.
+              </div>
+            </label>
+
+            <div className="ProfileDetailsContainer">
+              <div className="DisplayFullName">{`${firstName} ${lastName}`}</div>
+              <div className="DisplayEmailAddress">
+                <img
+                  src={envelope}
+                  alt="Pending"
+                  style={{ paddingLeft: "5px" }}
+                  className="emailIcon"
+                />{" "}
+                {email}
+              </div>
+              <div className="DisplayMobileNumber">
+                <img src={phone} alt="Pending" style={{ paddingLeft: "5px" }} />
+                {mobileNumber}
+              </div>
             </div>
           </div>
         </div>

@@ -10,8 +10,9 @@ body {
 }
 
 .MainProfileContainer{
- /* margin: 1% 20% 1% 10%; */
- padding: 70px;
+ margin: 3% 18% 10% 12%;
+ margin-top: 70px;
+
 }
 
 .MainHeading {
@@ -289,7 +290,7 @@ input[type=tel] {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   overflow:scroll;
-  width: 100%;
+  width: 100%; 
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
