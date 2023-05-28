@@ -3,7 +3,10 @@ import { NavLink } from 'react-router-dom';
 import notificationIcon from '../../assets/images/notification.png'
 import profileIcon from '../../assets/images/user.png'
 import React from 'react';
+<<<<<<< HEAD
 import { AuthenticatedComponent } from "@asgardeo/auth-react";
+=======
+>>>>>>> admin-page
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
