@@ -2,7 +2,7 @@ import './navbar.css'
 import { useLocation, NavLink } from 'react-router-dom';
 import notificationIcon from '../../assets/images/notification.png'
 import profileIcon from '../../assets/images/user.png'
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import logo from '../../assets/images/logo.png'
 import { AuthenticatedComponent } from "@asgardeo/auth-react";
 import Box from '@mui/material/Box';
