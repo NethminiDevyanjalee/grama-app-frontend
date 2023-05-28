@@ -1,9 +1,9 @@
 import './navbar.css'
-import { NavLink } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
 import notificationIcon from '../../assets/images/notification.png'
 import profileIcon from '../../assets/images/user.png'
+import React, { useEffect, useState } from 'react';
 import logo from '../../assets/images/logo.png'
-import React from 'react';
 import { AuthenticatedComponent } from "@asgardeo/auth-react";
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
@@ -11,11 +11,31 @@ import Tab from '@mui/material/Tab';
 
 function Navbar() {
 
+  const location = useLocation();
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    const path = location.pathname;
+    let tabValue = 0;
+
+    if (path === '/apply') {
+      tabValue = 1;
+    } else if (path === '/status') {
+      tabValue = 2;
+    } else if (path === '/help') {
+      tabValue = 3;
+    } else if (path === '/notifications') {
+      tabValue = 4;
+    } else if (path === '/profile') {
+      tabValue = 5;
+    }
+  
+    setValue(tabValue);
+  }, [location]);
 
   return (
     <div>
@@ -23,7 +43,7 @@ function Navbar() {
           <AuthenticatedComponent>
             <img src={logo} alt="Logo" className='logo'/>
             <Box className="nav-item" sx={{ width: '100%' }}>
-              <Tabs indicatorColor={"white"} textColor={"white"} value={value} onChange={handleChange} aria-label="nav tabs example">
+              <Tabs indicatorColor={"inherit"} textColor={"inherit"} value={value} onChange={handleChange} aria-label="nav tabs example">
                 <Tab label="Home" component={NavLink} to="/home" sx={{marginLeft: '350px'}}/>
                 <Tab label="Apply" component={NavLink} to="/apply" />
                 <Tab label="Status" component={NavLink} to="/status" />
