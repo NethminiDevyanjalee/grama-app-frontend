@@ -11,6 +11,7 @@ import { useAuthContext } from "@asgardeo/auth-react";
 import { SecureRoute } from "@asgardeo/auth-react";
 import StatusCheck from "./view/pages/StatusCheck";
 import AdminPanel from './view/pages/AdminPanel';
+import CopyrightView from "./view/components/CopyrightView";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <AuthenticatedRoute path="/help" component={Help} />
           <AuthenticatedRoute path="/admin" component={AdminPanel} />
         </Switch>
+        <CopyrightView />
       </div>
     </Router>
   );
