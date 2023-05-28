@@ -46,10 +46,10 @@ export default function Application() {
             const [identityCheckResponse, addressCheckResponse, policeCheckResponse] = await Promise.all([
                 identityCheck(accessToken, id),
                 addressCheck(accessToken, id, address),
-                // policeCheck(accessToken, id)
+                policeCheck(accessToken, id)
             ]);
 
-            if (!identityCheckResponse.ok || !addressCheckResponse.ok) {
+            if (!identityCheckResponse.ok || !addressCheckResponse.ok || !policeCheckResponse.ok) {
                 setError('⚠ Something went wrong');
                 return;
             }

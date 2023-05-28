@@ -6,73 +6,43 @@ import processingIcon from "../../assets/images/processingIcon.png";
 import info from "../../assets/images/info.png";
 import completedIcon from "../../assets/images/completedIcon.png";
 import Swal from "sweetalert2";
+import { getStatus } from "../../api/get-status";
+import { useAuthContext } from "@asgardeo/auth-react";
 
 function StatusCheck() {
+
+  const { getAccessToken } = useAuthContext();
   const [statusData, setStatusData] = useState();
 
-  const apiUrl =
-    "https://ebec18ec-b7dc-4ea3-8dcd-ae4ded23340a-dev.e1-us-east-azure.choreoapis.dev/gewp/grama-app/endpoint-9090-803/1.0.0/getStatus";
-  const userId = "123v";
-  const queryParams = `?userId=${encodeURIComponent(userId)}`;
-  const url = apiUrl + queryParams;
-  const accessToken = "your_access_token";
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch(url, {
-        method: "GET",
-        headers: {
-          uthorization: `Bearer ${accessToken}`,
-          accept: "text/plain",
-        },
-      });
-
-      if (response.ok) {
-        // const responseData = await response.text();
-        // setStatusData(await response.text());
-        // setStatusData(responseData);
-        // if (!responseData) {
-        //   throw new Error("Empty response data");
-        // }
-        // // const parsedData = JSON.parse(responseData);
-        // // Parse the response data
-        // if (!isValidStatus(parsedData.status)) {
-        //   throw new Error("Invalid response data");
-        // }
-        // setStatusData(parsedData.status);
-      } else {
-        throw new Error("Failure due to network error!");
-      }
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      let errorMessage = "An error occurred while fetching the data.";
-
-      if (error instanceof Error) {
-        errorMessage = `Error: ${error.message}`;
-      }
-
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: errorMessage,
-      });
-    }
-  };
-
-  // const isValidStatus = (status) => {
-  //   const expectedStatusValues = [
-  //     "processing",
-  //     "pending",
-  //     "need-more-info",
-  //     "completed",
-  //   ];
-  //   return expectedStatusValues.includes(status);
-  // };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const accessToken = await getAccessToken();
+        const response = await getStatus(accessToken, 'A123456789');
+        if (response.ok) {
+          const responseData = await response.text();
+          setStatusData(responseData);
+        } else {
+          throw new Error("Failure due to network error!");
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        let errorMessage = "An error occurred while fetching the data.";
+
+        if (error instanceof Error) {
+          errorMessage = `Error: ${error.message}`;
+        }
+
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: errorMessage,
+        });
+      }
+    };
+
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [getAccessToken]);
 
   useEffect(() => {
     console.log(statusData);
@@ -90,7 +60,7 @@ function StatusCheck() {
             <div className="progress-bar-label processing">
               <img
                 src={processingIcon}
-                alt="Processing"
+                alt="Not Applied"
                 className="processingIcon"
               />
             </div>
@@ -118,35 +88,18 @@ function StatusCheck() {
 
           <div className="progress-bar-container">
             <div className="progress-bar">
-              {statusData && (
-                <div
-                  className={`progress-bar-status processing ${
-                    statusData === "processing" ? "active" : ""
-                  }`}
-                >
-                  <div
-                    className={`${statusData === "processing" ? "check" : ""}`}
-                    style={{
-                      display: statusData === "processing" ? "flex" : "none",
-                    }}
-                  >
-                    ✓
-                  </div>
-                </div>
-              )}
-
               <div
-                className={`progress-bar-status processing ${
-                  statusData === "processing" ? "active" : ""
+                className={`progress-bar-status not-applied ${
+                  statusData === "not applied" ? "active" : ""
                 }`}
               >
                 <div
-                  className={`${statusData === "processing" ? "check" : ""}`}
+                  className={`${statusData === "not applied" ? "check" : ""}`}
                   style={{
-                    display: statusData === "processing" ? "flex" : "none",
+                    display: statusData === "not applied" ? "flex" : "none",
                   }}
                 >
-                  ✓
+                  X
                 </div>
               </div>
 
@@ -166,30 +119,29 @@ function StatusCheck() {
               </div>
 
               <div
-                className={`progress-bar-status need-more-info ${
-                  statusData === "need-more-info" ? "active" : ""
+                className={`progress-bar-status rejected ${
+                  statusData === "rejected" ? "active" : ""
                 }`}
               >
                 <div
-                  className={`${
-                    statusData === "need-more-info" ? "check" : ""
-                  }`}
+                  className={`${statusData === "rejected" ? "check" : ""}`}
                   style={{
-                    display: statusData === "need-more-info" ? "flex" : "none",
+                    display: statusData === "rejected" ? "flex" : "none",
                   }}
                 >
-                  !
+                  X
                 </div>
               </div>
+
               <div
-                className={`progress-bar-status completed ${
-                  statusData === "completed" ? "active" : ""
+                className={`progress-bar-status approved ${
+                  statusData === "approved" ? "active" : ""
                 }`}
               >
                 <div
-                  className={`${statusData === "completed" ? "check" : ""}`}
+                  className={`${statusData === "approved" ? "check" : ""}`}
                   style={{
-                    display: statusData === "completed" ? "flex" : "none",
+                    display: statusData === "approved" ? "flex" : "none",
                   }}
                 >
                   ✓
@@ -199,7 +151,7 @@ function StatusCheck() {
           </div>
           <div className="status-icons-container">
             <div className="status-icon pending">
-              <span className="sr-only">Processing</span>
+              <span className="sr-only">Not Applied</span>
             </div>
             <div className="status-icon processing">
               <span className="sr-only">Pending</span>
