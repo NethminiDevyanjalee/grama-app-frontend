@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import main from '../main.module.css';
 import classes from './Application.module.css';
 import submitIcon from '../../assets/images/submitIcon.png';
@@ -11,7 +11,7 @@ export default function Application() {
     const [id, setId] = useState('');
     const [address, setAddress] = useState('');
     const [error, setError] = useState('');
-    const navigate = useNavigate();
+    const navigate = useHistory();
 
     const handleIdChange = (event) => {
         setId(event.target.value);
