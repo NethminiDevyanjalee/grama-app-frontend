@@ -2,6 +2,7 @@ import './navbar.css'
 import { NavLink } from 'react-router-dom';
 import notificationIcon from '../../assets/images/notification.png'
 import profileIcon from '../../assets/images/user.png'
+import logo from '../../assets/images/logo.png'
 import React from 'react';
 import { AuthenticatedComponent } from "@asgardeo/auth-react";
 import Box from '@mui/material/Box';
@@ -20,6 +21,7 @@ function Navbar() {
     <div>
       <nav className="navbar">
           <AuthenticatedComponent>
+            <img src={logo} alt="Logo" className='logo'/>
             <Box className="nav-item" sx={{ width: '100%' }}>
               <Tabs indicatorColor={"white"} textColor={"white"} value={value} onChange={handleChange} aria-label="nav tabs example">
                 <Tab label="Home" component={NavLink} to="/home" />
