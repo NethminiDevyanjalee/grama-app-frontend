@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
+import "./StatusCheck.css";
 
 import pendingIcon from "../../assets/images/pendingIcon.png";
 import processingIcon from "../../assets/images/processingIcon.png";
 import info from "../../assets/images/info.png";
 import completedIcon from "../../assets/images/completedIcon.png";
 import Swal from "sweetalert2";
-import "../../css/StatusCheck.css";
 
 function StatusCheck() {
   const [statusData, setStatusData] = useState();

@@ -9,7 +9,7 @@ import envelope from "../../assets/images/envelope.png";
 import phone from "../../assets/images/phone.png";
 import Swal from "sweetalert2";
 
-import "../../css/UserProfileDetails.css";
+import "./UserProfileDetails.css";
 
 function UserProfileDetails() {
   const [firstName, setFirstName] = useState("");
