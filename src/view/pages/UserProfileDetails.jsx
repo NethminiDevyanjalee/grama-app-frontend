@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import cameraIcon from "../../assets/images/cameraIcon.png";
 import saveIcon from "../../assets/images/saveIcon.png";
@@ -8,20 +8,39 @@ import infoIcon2 from "../../assets/images/infoIcon2.png";
 import envelope from "../../assets/images/envelope.png";
 import phone from "../../assets/images/phone.png";
 import Swal from "sweetalert2";
-import { BasicUserInfo, useAuthContext } from "@asgardeo/auth-react"
+import { BasicUserInfo, useAuthContext } from "@asgardeo/auth-react";
 
 import "./UserProfileDetails.css";
 
 function UserProfileDetails() {
+  const { isAuthenticated, signOut, getBasicUserInfo } = useAuthContext();
 
-  const {signOut, getBasicUserInfo} = useAuthContext();
-  const [user, setUser] = useState(getBasicUserInfo());
-
+  const [basicUserInfo, setBasicUserInfo] = useState(null);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [profilePicture, setProfilePicture] = useState(null);
+
+  useEffect(() => {
+    const fetchUserDetails = async () => {
+      try {
+        if (isAuthenticated) {
+          const userInfo = await getBasicUserInfo();
+          console.log(getBasicUserInfo);
+          setBasicUserInfo(userInfo);
+          setFirstName(userInfo?.firstName || "");
+          setLastName(userInfo?.lastName || "");
+          setEmail(userInfo?.email || "");
+          setMobileNumber(userInfo?.mobileNumber || "");
+        }
+      } catch (error) {
+        console.error("Error fetching user details:", error);
+      }
+    };
+
+    fetchUserDetails();
+  }, [isAuthenticated, getBasicUserInfo]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -69,25 +88,19 @@ function UserProfileDetails() {
       text: "Your profile details updated successfully",
       icon: "success",
     });
-
-    // alert("Your profile details updated successfully");
   };
 
-  // // Function to handle form submission
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   // TODO: Update user profile with form data
-  // };
-
   const handleProfilePictureChange = (event) => {
-    setProfilePicture(event.target.files[0]);
+    if (event.target.files && event.target.files[0]) {
+      setProfilePicture(event.target.files[0]);
+    }
   };
 
   const handleCancel = () => {
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setMobileNumber("");
+    setFirstName(basicUserInfo?.firstName || "");
+    setLastName(basicUserInfo?.lastName || "");
+    setEmail(basicUserInfo?.email || "");
+    setMobileNumber(basicUserInfo?.mobileNumber || "");
     setProfilePicture(null);
   };
 
@@ -97,7 +110,9 @@ function UserProfileDetails() {
         <h1 className="MainHeading">User Profile Details</h1>
         <div className="SubHeading">
           <h2>Customize Your Profile</h2>
-          <button className="LogoutButton" onClick={() => signOut()}>Logout</button>
+          <button className="LogoutButton" onClick={() => signOut()}>
+            Logout
+          </button>
         </div>
         <div className="ContainerOne">
           <div className="FormInputContainer">
