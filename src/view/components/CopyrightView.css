@@ -1,0 +1,17 @@
+.copyright{
+    color: #294a84b2;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Noto Sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    letter-spacing: 0.35px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    flex-shrink: 1;
+}
+.label1 {
+    text-transform: uppercase;
+}
+.label2 {
+    text-transform: lowercase;
+}

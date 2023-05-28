@@ -47,8 +47,7 @@ function Notification() {
                 <div className="notification-right-column">
                     <img src={notification} alt="Customer Support" />
                 </div>
-            </div> 
-            <p className="copyright">Copyright @2023</p>        
+            </div>       
         </div>
     );
 }

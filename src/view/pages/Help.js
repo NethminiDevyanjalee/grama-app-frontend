@@ -85,8 +85,7 @@ function Help() {
                 <div className="help-right-column">
                     <img src={customerSupport} alt="Customer Support" />
                 </div>
-            </div> 
-            <p className="copyright">Copyright @2023</p>        
+            </div>        
         </div>
     );
 }

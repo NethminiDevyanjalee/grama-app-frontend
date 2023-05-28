@@ -2,10 +2,10 @@ import main from '../main.module.css';
 import classes from './Home.module.css';
 import homeImage from '../../assets/images/homeImage.svg';
 import arrowIcon from '../../assets/images/arrowIcon.png';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 export default function Home() {
-    const navigate = useNavigate();
+    const navigate = useHistory();
 
     return (
         <div className={`${main.gramaApp} ${classes.root}`}>
