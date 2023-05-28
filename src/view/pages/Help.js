@@ -3,10 +3,13 @@ import './help_page.css'
 import envelope from '../../assets/images/envelope.png'
 import Swal from 'sweetalert2'
 import React, { useState } from 'react'
+import { useAuthContext } from "@asgardeo/auth-react"
+import { sendMessage } from '../../api/send-message.js';
 
 function Help() {
 
     //const apiKey = process.env.REACT_APP_API_KEY;
+    const {getAccessToken} = useAuthContext();
 
     const [message, setMessage] = useState('');
 
@@ -14,7 +17,7 @@ function Help() {
         setMessage(event.target.value);
     };
 
-    const handleSend = () => {
+    async function handleSend () {
         if (message.trim() === '') {
           Swal.fire({
             title: 'Empty Message',
@@ -23,17 +26,8 @@ function Help() {
             confirmButtonText: 'OK',
           });
         } else {
-            const apiUrl = 'https://ebec18ec-b7dc-4ea3-8dcd-ae4ded23340a-dev.e1-us-east-azure.choreoapis.dev/gewp/grama-app/endpoint-9090-803/2.0.0/sendMessage'; 
-            const queryParams = `?user_message=${encodeURIComponent(message)}`;
-            const url = apiUrl + queryParams;
-
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                'API-Key': 'ADD-API-KEY-HERE',
-                'accept': 'text/plain'
-            },
-            })
+            const accessToken = await getAccessToken();
+            sendMessage(accessToken, message)
                 .then((response) => {
                     if (response.ok) {
                     Swal.fire({
@@ -57,9 +51,8 @@ function Help() {
                     });
                 });
         }
-    };
+    }
       
-
     return (
         <div>
             <div className="help-page-layout">

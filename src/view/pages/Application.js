@@ -4,14 +4,20 @@ import main from '../main.module.css';
 import classes from './Application.module.css';
 import submitIcon from '../../assets/images/submitIcon.png';
 import applicationImage from '../../assets/images/applicationImage.svg';
-import { API_KEY, Base_URL } from '../../config/api';
 import Swal from 'sweetalert2';
+import { useAuthContext } from "@asgardeo/auth-react";
+import { identityCheck } from '../../api/identity-check.js';
+import { policeCheck } from '../../api/police-check';
+import { addressCheck } from '../../api/address-check';
 
 export default function Application() {
+
+    const {getAccessToken} = useAuthContext();
+
     const [id, setId] = useState('');
     const [address, setAddress] = useState('');
     const [error, setError] = useState('');
-    const navigate = useHistory();
+    const history = useHistory();
 
     const handleIdChange = (event) => {
         setId(event.target.value);
@@ -35,27 +41,15 @@ export default function Application() {
           }
 
           try {
-            const headers = {
-                'API-Key': API_KEY,
-                'accept': '*/*'
-            }
+            const accessToken = await getAccessToken();
+            
+            const [identityCheckResponse, addressCheckResponse, policeCheckResponse] = await Promise.all([
+                identityCheck(accessToken, id),
+                addressCheck(accessToken, id, address),
+                // policeCheck(accessToken, id)
+            ]);
 
-            const identityCheckResponse = await fetch(`${Base_URL}/identitycheck?userId=${id}`, {
-                method: 'GET',
-                headers: headers,
-            });
-
-            const addressCheckResponse = await fetch(`${Base_URL}/addresscheck?userId=${id}&address=${address}`, {
-                method: 'GET',
-                headers: headers,
-            });
-
-            const policeCheckResponse = await fetch(`${Base_URL}/policecheck?userId=${id}`, {
-                method: 'GET',
-                headers: headers,
-            });
-
-            if (!identityCheckResponse.ok || !addressCheckResponse.ok || !policeCheckResponse.ok) {
+            if (!identityCheckResponse.ok || !addressCheckResponse.ok) {
                 setError('⚠ Something went wrong');
                 return;
             }
@@ -67,13 +61,12 @@ export default function Application() {
                 showConfirmButton: false,
                 timer: 2000,
             }).then(() => {
-                navigate('/status');
+                history.push('/status')
             });
         } catch (error) {
             setError('⚠ An error occurred while submitting the form');
             console.error(error);
         }
-
     };
 
     return(

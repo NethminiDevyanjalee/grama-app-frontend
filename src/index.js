@@ -8,8 +8,8 @@ import { AuthProvider } from "@asgardeo/auth-react";
 const authConfig = {
   signInRedirectURL: "http://localhost:3000/home",
   signOutRedirectURL: "http://localhost:3000/",
-  clientID: "tEnYxGtR19OCtgmdEWp7DgL87fEa",
-  baseUrl: "https://api.asgardeo.io/t/hasinisama",
+  clientID: "eTcJm8g8DejJm2UOWV0uR0aXP5Ia",
+  baseUrl: "https://api.asgardeo.io/t/pasidaleed",
   scope: ["openid", "profile"],
 };
 
