@@ -10,6 +10,7 @@ import Landing from './view/pages/Landing';
 import { useAuthContext } from "@asgardeo/auth-react";
 import { SecureRoute } from "@asgardeo/auth-react";
 import StatusCheck from "./view/pages/StatusCheck";
+import AdminPanel from './view/pages/AdminPanel';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <AuthenticatedRoute path="/notifications" component={Notification} />
           <AuthenticatedRoute path="/profile" component={UserProfileDetails} />
           <AuthenticatedRoute path="/help" component={Help} />
+          <AuthenticatedRoute path="/admin" component={<AdminPanel />} />
         </Switch>
       </div>
     </Router>
