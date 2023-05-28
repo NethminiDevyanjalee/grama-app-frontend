@@ -8,10 +8,15 @@ import infoIcon2 from "../../assets/images/infoIcon2.png";
 import envelope from "../../assets/images/envelope.png";
 import phone from "../../assets/images/phone.png";
 import Swal from "sweetalert2";
+import { BasicUserInfo, useAuthContext } from "@asgardeo/auth-react"
 
 import "./UserProfileDetails.css";
 
 function UserProfileDetails() {
+
+  const {signOut, getBasicUserInfo} = useAuthContext();
+  const [user, setUser] = useState(getBasicUserInfo());
+
   const [userInformation, setUserInformation] = useState({});
 
   const [firstName, setFirstName] = useState(userInformation?.firstName || "");
@@ -101,8 +106,10 @@ function UserProfileDetails() {
     <div>
       <div className="MainProfileContainer">
         <h1 className="MainHeading">User Profile Details</h1>
-        <h2 className="SubHeading">Customize Your Profile</h2>
-
+        <div className="SubHeading">
+          <h2>Customize Your Profile</h2>
+          <button className="LogoutButton" onClick={() => signOut()}>Logout</button>
+        </div>
         <div className="ContainerOne">
           <div className="FormInputContainer">
             <div className="FirstNameContainer">

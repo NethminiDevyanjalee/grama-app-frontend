@@ -3,9 +3,11 @@ import classes from './Home.module.css';
 import homeImage from '../../assets/images/homeImage.svg';
 import arrowIcon from '../../assets/images/arrowIcon.png';
 import { useHistory } from 'react-router-dom';
+import React from 'react';
 
 export default function Home() {
-    const navigate = useHistory();
+
+    const history = useHistory();
 
     return (
         <div className={`${main.gramaApp} ${classes.root}`}>
@@ -28,7 +30,7 @@ export default function Home() {
             <div className={classes.homeImage}>
                 <img src={homeImage} alt="HomeImage" className={classes.homeIcon} />
             </div>
-            <button className={classes.homeApplyButton} onClick={() => navigate('/apply')}>
+            <button className={classes.homeApplyButton} onClick={() => history.push('/apply')}>
                 <div className={classes.applyButton}></div>
                 <div className={classes.applyFrame}>
                     <div className={classes.applyDescription}>APPLY</div>
