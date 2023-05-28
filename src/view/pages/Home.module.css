@@ -1,0 +1,123 @@
+.root {
+    position: relative;
+    width: 1280px;
+    height: 832px;
+    align-items: flex-start;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  .homeHeader {
+    position: absolute;
+    left: 70px;
+    top: 70px;
+    width: 931px;
+    height: 80px;
+    flex-direction: column;
+  }
+  .headerWrapper {
+    font-size: 64px;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    flex-shrink: 1;
+  }
+  .headerLabel1 {
+    color: #000113;
+    font-size: 64px;
+    font-weight: 800;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    letter-spacing: 0.35px;
+  }
+  .headerLabel2 {
+    color: #294a84;
+    font-size: 64px;
+    font-weight: 800;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    letter-spacing: 0.35px;
+    text-transform: capitalize;
+  }
+  .homeDescription1 {
+    position: absolute;
+    left: 70px;
+    top: 210px;
+    width: 570px;
+    height: min-content;
+    flex-direction: column;
+  }
+  .homeDescription2 {
+    position: absolute;
+    left: 70px;
+    top: 310px;
+    width: 570px;
+    height: min-content;
+    flex-direction: column;
+  }
+  .descriptionLabel {
+    color: #294a84;
+    font-size: 20px;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    letter-spacing: 0.35px;
+    flex-shrink: 1;
+  }
+  
+  .homeImage {
+    position: absolute;
+    left: 664px;
+    top: 211px;
+    width: 595.9998px;
+    height: 439.0001px;
+    overflow: visible;
+  }
+  .homeIcon {
+    width: 100%;
+    height: 100%;
+  }
+  .homeApplyButton {
+    position: absolute;
+    left: 70px;
+    top: 455px;
+    width: 166px;
+    height: 43.2055px;
+    align-items: flex-start;
+    cursor: pointer;
+  }
+  .applyButton {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    outline: solid 3px #294a84;
+    outline-offset: -3px;
+    border-radius: 50px;
+    background-color: #294a84;
+  }
+  .applyFrame {
+    position: absolute;
+    left: calc(50% - -0.5px);
+    top: calc(50% - -0.3973px);
+    width: min-content;
+    height: min-content;
+    align-items: center;
+    gap: 20px;
+    transform: translate(-50%, -50%);
+  }
+  .applyDescription {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      'Liberation Sans', sans-serif;
+    width: min-content;
+    height: min-content;
+    white-space: nowrap;
+    flex-direction: column;
+  }
+  .applyIcon {
+    width: 16.7624px;
+    height: 12px;
+    overflow: visible;
+  }
+  

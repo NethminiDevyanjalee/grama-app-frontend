@@ -1,10 +1,15 @@
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React from 'react'
+import Home from "./view/pages/Home";
+import Application from "./view/pages/Application";
 import Navbar from './view/components/Navbar';
 import Notification from './view/pages/Notification';
+import UserProfileDetails from './view/pages/UserProfileDetails'
 import Help from './view/pages/Help';
 import Landing from './view/pages/Landing';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useAuthContext } from "@asgardeo/auth-react";
 import { SecureRoute } from "@asgardeo/auth-react";
+import StatusCheck from "./view/pages/StatusCheck";
 
 function App() {
   return (
@@ -14,10 +19,10 @@ function App() {
         <Switch>
           <Route exact path="/" component={Landing} />
           <AuthenticatedRoute path="/home" component={Home} />
-          <AuthenticatedRoute path="/apply" component={Apply} />
-          <AuthenticatedRoute path="/status" component={Status} />
+          <AuthenticatedRoute path="/apply" component={Application} />
+          <AuthenticatedRoute path="/status" component={StatusCheck} />
           <AuthenticatedRoute path="/notifications" component={Notification} />
-          <AuthenticatedRoute path="/profile" component={Profile} />
+          <AuthenticatedRoute path="/profile" component={UserProfileDetails} />
           <AuthenticatedRoute path="/help" component={Help} />
         </Switch>
       </div>
@@ -38,22 +43,5 @@ const AuthenticatedRoute = ({ component: Component, ...rest }) => {
     />
   );
 };
-
-function Home() {
-  return <h1>Welcome to the home page!</h1>;
-}
-
-function Apply() {
-  return <h1>About us</h1>;
-}
-
-function Status() {
-  return <h1>Contact us</h1>;
-}
-
-function Profile() {
-  const { signOut } = useAuthContext();
-  return <button onClick={ () => signOut() }>LOGOUT</button>;
-}
 
 export default App;
