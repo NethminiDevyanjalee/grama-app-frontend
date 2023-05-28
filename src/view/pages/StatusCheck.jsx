@@ -21,15 +21,16 @@ function StatusCheck() {
       const response = await fetch(url, {
         method: 'GET',
         headers: {
-          'API-Key' : 'ADD YOURS HERE',
-          'accept': 'text/plain'
+          'API-Key' : '',
+          'accept': 'text/plain',
         },
       });
 
       if (response.ok) {
         // const responseData = await response.text();
 
-        setStatusData(await response.text());
+        // setStatusData(await response.text());
+        // setStatusData(responseData);
 
         // if (!responseData) {
         //   throw new Error("Empty response data");
@@ -82,25 +83,22 @@ function StatusCheck() {
 
   return (
     <div>
+    <div className="MainStatusBox">
       <h1 className="main-heading">Status Check</h1>
       <h2 className="sub-heading">
         The Current Status of your Grama Certificate will be displayed here
       </h2>
       <div className="status-check-container">
         <div className="progress-bar-labels">
-          {statusData && (
-            <div
-              className={`progress-bar-label processing ${
-                statusData === "processing" ? "active" : ""
-              }`}
-            >
+    
+            <div className='progress-bar-label processing' >
               <img
                 src={processingIcon}
                 alt="Processing"
                 className="processingIcon"
               />
             </div>
-          )}
+          
           <div className="progress-bar-label pending">
             <img 
               src={pendingIcon} 
@@ -108,6 +106,7 @@ function StatusCheck() {
               className="pendingIcon" 
             />
           </div>
+
           <div className="progress-bar-label need-more-info">
             <img
               src={info}
@@ -115,6 +114,7 @@ function StatusCheck() {
               className="need-more-info Icon"
             />
           </div>
+
           <div className="progress-bar-label completed">
             <img
               src={completedIcon}
@@ -126,32 +126,46 @@ function StatusCheck() {
 
         <div className="progress-bar-container">
           <div className="progress-bar">
-            <div
-              className={`progress-bar-status processing ${
-                statusData === "processing" ? "active" : ""
-              }`}
-            >
-              <div
-                className={`${statusData === "processing" ? "check" : ""}`}
-                style={{
-                  display: statusData === "processing" ? "flex" : "none",
-                }}
-              >
-                ✓
-              </div>
-            </div>
-            <div
-              className={`progress-bar-status pending ${
-                statusData === "pending" ? "active" : ""
-              }`}
-            >
-              <div
-                className={`${statusData === "pending" ? "check" : ""}`}
-                style={{ display: statusData === "pending" ? "flex" : "none" }}
-              >
-                ✓
-              </div>
-            </div>
+
+        {statusData && (
+        <div className={`progress-bar-status processing ${statusData === "processing" ? "active" : ""}`}>
+          {/* <div className={`${statusData === "processing" ? "check" : ""}`} 
+          style={{ display: statusData === "processing" ? "flex" : "none" }}>
+            ✓
+          </div> */}
+        </div>
+        )}
+      
+
+        {/* {statusData && (
+          <div
+          className={`progress-bar-status processing ${
+            statusData === "processing" ? "active" : ""
+          }`}
+        >
+          <div
+            className={`${statusData === "processing" ? "check" : ""}`}
+            style={{display: statusData === "processing" ? "flex" : "none" }}
+          >
+            ✓
+          </div>
+        </div>
+        )}  */}
+
+         {statusData && (
+          <div
+          className={`progress-bar-status pending ${
+            statusData === "pending" ? "active" : ""
+          }`}
+        >
+          <div
+            className={`${statusData === "pending" ? "check" : ""}`}
+            style={{ display: statusData === "pending" ? "flex" : "none" }}
+          >
+            ✓
+          </div>
+        </div>
+         )}   
             <div
               className={`progress-bar-status need-more-info ${
                 statusData === "need-more-info" ? "active" : ""
@@ -197,6 +211,8 @@ function StatusCheck() {
           </div>
         </div>
       </div>
+    </div>
+    <p className="copyright">Copyright @2023</p>  
     </div>
   );
 }
