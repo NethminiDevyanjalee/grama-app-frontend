@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import cameraIcon from "../../assets/images/cameraIcon.png";
 import saveIcon from "../../assets/images/saveIcon.png";
@@ -12,11 +12,30 @@ import Swal from "sweetalert2";
 import "./UserProfileDetails.css";
 
 function UserProfileDetails() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [mobileNumber, setMobileNumber] = useState("");
+  const [userInformation, setUserInformation] = useState({});
+
+  const [firstName, setFirstName] = useState(userInformation?.firstName || "");
+  const [lastName, setLastName] = useState(userInformation?.lastName || "");
+  const [email, setEmail] = useState(userInformation?.email || "");
+  const [mobileNumber, setMobileNumber] = useState(
+    userInformation?.mobileNumber || ""
+  );
   const [profilePicture, setProfilePicture] = useState(null);
+
+  useEffect(() => {
+    // Fetch user information from Asgardeo and update the state variable
+    const fetchUserInformation = async () => {
+      try {
+        const response = await fetch("/api/getUserInformation");
+        const data = await response.json();
+        setUserInformation(data); // Assuming the response contains user information in the expected format
+      } catch (error) {
+        console.error("Error fetching user information:", error);
+      }
+    };
+
+    fetchUserInformation();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -64,24 +83,17 @@ function UserProfileDetails() {
       text: "Your profile details updated successfully",
       icon: "success",
     });
-
-    // alert("Your profile details updated successfully");
   };
-  // // Function to handle form submission
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   // TODO: Update user profile with form data
-  // };
 
   const handleProfilePictureChange = (event) => {
     setProfilePicture(event.target.files[0]);
   };
 
   const handleCancel = () => {
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setMobileNumber("");
+    setFirstName(userInformation?.firstName || "");
+    setLastName(userInformation?.lastName || "");
+    setEmail(userInformation?.email || "");
+    setMobileNumber(userInformation?.mobileNumber || "");
     setProfilePicture(null);
   };
 
