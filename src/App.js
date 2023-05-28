@@ -25,7 +25,7 @@ function App() {
           <AuthenticatedRoute path="/notifications" component={Notification} />
           <AuthenticatedRoute path="/profile" component={UserProfileDetails} />
           <AuthenticatedRoute path="/help" component={Help} />
-          <AuthenticatedRoute path="/admin" component={<AdminPanel />} />
+          <AuthenticatedRoute path="/admin" component={AdminPanel} />
         </Switch>
       </div>
     </Router>
