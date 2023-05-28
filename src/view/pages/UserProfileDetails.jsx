@@ -8,39 +8,39 @@ import infoIcon2 from "../../assets/images/infoIcon2.png";
 import envelope from "../../assets/images/envelope.png";
 import phone from "../../assets/images/phone.png";
 import Swal from "sweetalert2";
-import { BasicUserInfo, useAuthContext } from "@asgardeo/auth-react"
+import { BasicUserInfo, useAuthContext } from "@asgardeo/auth-react";
 
 import "./UserProfileDetails.css";
 
 function UserProfileDetails() {
+  const { isAuthenticated, signOut, getBasicUserInfo } = useAuthContext();
 
-  const {signOut, getBasicUserInfo} = useAuthContext();
-  const [user, setUser] = useState(getBasicUserInfo());
-
-  const [userInformation, setUserInformation] = useState({});
-
-  const [firstName, setFirstName] = useState(userInformation?.firstName || "");
-  const [lastName, setLastName] = useState(userInformation?.lastName || "");
-  const [email, setEmail] = useState(userInformation?.email || "");
-  const [mobileNumber, setMobileNumber] = useState(
-    userInformation?.mobileNumber || ""
-  );
+  const [basicUserInfo, setBasicUserInfo] = useState(null);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
   const [profilePicture, setProfilePicture] = useState(null);
 
   useEffect(() => {
-    // Fetch user information from Asgardeo and update the state variable
-    const fetchUserInformation = async () => {
+    const fetchUserDetails = async () => {
       try {
-        const response = await fetch("/api/getUserInformation");
-        const data = await response.json();
-        setUserInformation(data); // Assuming the response contains user information in the expected format
+        if (isAuthenticated) {
+          const userInfo = await getBasicUserInfo();
+          console.log(getBasicUserInfo);
+          setBasicUserInfo(userInfo);
+          setFirstName(userInfo?.firstName || "");
+          setLastName(userInfo?.lastName || "");
+          setEmail(userInfo?.email || "");
+          setMobileNumber(userInfo?.mobileNumber || "");
+        }
       } catch (error) {
-        console.error("Error fetching user information:", error);
+        console.error("Error fetching user details:", error);
       }
     };
 
-    fetchUserInformation();
-  }, []);
+    fetchUserDetails();
+  }, [isAuthenticated, getBasicUserInfo]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -91,14 +91,16 @@ function UserProfileDetails() {
   };
 
   const handleProfilePictureChange = (event) => {
-    setProfilePicture(event.target.files[0]);
+    if (event.target.files && event.target.files[0]) {
+      setProfilePicture(event.target.files[0]);
+    }
   };
 
   const handleCancel = () => {
-    setFirstName(userInformation?.firstName || "");
-    setLastName(userInformation?.lastName || "");
-    setEmail(userInformation?.email || "");
-    setMobileNumber(userInformation?.mobileNumber || "");
+    setFirstName(basicUserInfo?.firstName || "");
+    setLastName(basicUserInfo?.lastName || "");
+    setEmail(basicUserInfo?.email || "");
+    setMobileNumber(basicUserInfo?.mobileNumber || "");
     setProfilePicture(null);
   };
 
@@ -108,7 +110,9 @@ function UserProfileDetails() {
         <h1 className="MainHeading">User Profile Details</h1>
         <div className="SubHeading">
           <h2>Customize Your Profile</h2>
-          <button className="LogoutButton" onClick={() => signOut()}>Logout</button>
+          <button className="LogoutButton" onClick={() => signOut()}>
+            Logout
+          </button>
         </div>
         <div className="ContainerOne">
           <div className="FormInputContainer">
