@@ -27,10 +27,10 @@ function UserProfileDetails() {
       try {
         if (isAuthenticated) {
           const userInfo = await getBasicUserInfo();
-          console.log(getBasicUserInfo);
+          console.log(userInfo);
           setBasicUserInfo(userInfo);
-          setFirstName(userInfo?.firstName || "");
-          setLastName(userInfo?.lastName || "");
+          setFirstName(userInfo?.givenName || "");
+          setLastName(userInfo?.familyName || "");
           setEmail(userInfo?.email || "");
           setMobileNumber(userInfo?.mobileNumber || "");
         }
