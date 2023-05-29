@@ -17,7 +17,7 @@ function StatusCheck() {
     const fetchData = async () => {
       try {
         const accessToken = await getAccessToken();
-        const userID = "your_user_id";
+        const userID = "A123456789";
         const response = await getStatus(accessToken, userID);
         if (response.ok) {
           const responseData = await response.text();
