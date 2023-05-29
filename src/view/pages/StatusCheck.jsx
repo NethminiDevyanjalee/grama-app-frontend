@@ -10,7 +10,6 @@ import { getStatus } from "../../api/get-status";
 import { useAuthContext } from "@asgardeo/auth-react";
 
 function StatusCheck() {
-
   const { getAccessToken } = useAuthContext();
   const [statusData, setStatusData] = useState();
 
@@ -18,7 +17,8 @@ function StatusCheck() {
     const fetchData = async () => {
       try {
         const accessToken = await getAccessToken();
-        const response = await getStatus(accessToken, 'A123456789');
+        const userID = "your_user_id";
+        const response = await getStatus(accessToken, userID);
         if (response.ok) {
           const responseData = await response.text();
           setStatusData(responseData);
