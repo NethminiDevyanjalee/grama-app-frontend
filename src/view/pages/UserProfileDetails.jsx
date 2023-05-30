@@ -1,14 +1,13 @@
-import React from "react";
 import { useState, useEffect } from "react";
 
 import cameraIcon from "../../assets/images/cameraIcon.png";
 import saveIcon from "../../assets/images/saveIcon.png";
 import cancelIcon from "../../assets/images/cancelIcon.png";
 import infoIcon2 from "../../assets/images/infoIcon2.png";
-import envelope from "../../assets/images/envelope.png";
+import envelope from "../../assets/images/envelope_light.png";
 import phone from "../../assets/images/phone.png";
 import Swal from "sweetalert2";
-import { BasicUserInfo, useAuthContext } from "@asgardeo/auth-react";
+import { useAuthContext } from "@asgardeo/auth-react";
 
 import "./UserProfileDetails.css";
 
@@ -32,7 +31,7 @@ function UserProfileDetails() {
           setFirstName(userInfo?.givenName || "");
           setLastName(userInfo?.familyName || "");
           setEmail(userInfo?.email || "");
-          setMobileNumber(userInfo?.mobileNumber || "");
+          setMobileNumber(userInfo?.phoneNumber || "");
         }
       } catch (error) {
         console.error("Error fetching user details:", error);
@@ -97,10 +96,10 @@ function UserProfileDetails() {
   };
 
   const handleCancel = () => {
-    setFirstName(basicUserInfo?.firstName || "");
-    setLastName(basicUserInfo?.lastName || "");
+    setFirstName(basicUserInfo?.givenName || "");
+    setLastName(basicUserInfo?.familyName || "");
     setEmail(basicUserInfo?.email || "");
-    setMobileNumber(basicUserInfo?.mobileNumber || "");
+    setMobileNumber(basicUserInfo?.phoneNumber || "");
     setProfilePicture(null);
   };
 
@@ -219,7 +218,7 @@ function UserProfileDetails() {
                     .click();
                 }}
               />
-              <div>
+              <div className="infoText">
                 <img
                   src={infoIcon2}
                   alt="Need More Info"
@@ -234,14 +233,13 @@ function UserProfileDetails() {
               <div className="DisplayEmailAddress">
                 <img
                   src={envelope}
-                  alt="Pending"
-                  style={{ paddingLeft: "5px" }}
+                  alt="Emai;"
                   className="emailIcon"
                 />{" "}
                 {email}
               </div>
               <div className="DisplayMobileNumber">
-                <img src={phone} alt="Pending" style={{ paddingLeft: "5px" }} />
+                <img src={phone} alt="Pending" />
                 {mobileNumber}
               </div>
             </div>
