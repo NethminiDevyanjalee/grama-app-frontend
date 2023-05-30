@@ -12,6 +12,7 @@ import { useAuthContext } from "@asgardeo/auth-react";
 import "./UserProfileDetails.css";
 
 function UserProfileDetails() {
+  
   const { isAuthenticated, signOut, getBasicUserInfo } = useAuthContext();
 
   const [basicUserInfo, setBasicUserInfo] = useState(null);

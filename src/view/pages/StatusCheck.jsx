@@ -10,20 +10,39 @@ import { getStatus } from "../../api/get-status";
 import { useAuthContext } from "@asgardeo/auth-react";
 
 function StatusCheck() {
-  const { getAccessToken } = useAuthContext();
+
+  const { getAccessToken, isAuthenticated, getBasicUserInfo } = useAuthContext();
   const [statusData, setStatusData] = useState();
+  const [userID, setUserID] = useState("");
+
+  useEffect(() => {
+    const fetchUserNIC = async () => {
+      try {
+        if (isAuthenticated) {
+          const userInfo = await getBasicUserInfo();
+          setUserID(userInfo?.NIC || "");
+        }
+      } catch (error) {
+        console.error("Error fetching user details:", error);
+      }
+    };
+  
+    fetchUserNIC();
+  }, [getBasicUserInfo, isAuthenticated]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const accessToken = await getAccessToken();
-        const userID = "A123456789";
-        const response = await getStatus(accessToken, userID);
-        if (response.ok) {
-          const responseData = await response.text();
-          setStatusData(responseData);
-        } else {
-          throw new Error("Failure due to network error!");
+        if (isAuthenticated && userID) {
+          const accessToken = await getAccessToken();
+          // const userID = "A123456789";
+          const response = await getStatus(accessToken, userID);
+          if (response.ok) {
+            const responseData = await response.text();
+            setStatusData(responseData);
+          } else {
+            throw new Error("Failure due to network error!");
+          }
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -42,10 +61,9 @@ function StatusCheck() {
     };
 
     fetchData();
-  }, [getAccessToken]);
+  }, [getAccessToken, isAuthenticated, getBasicUserInfo, userID]);
 
   useEffect(() => {
-    console.log(statusData);
   }, [statusData]);
 
   return (

@@ -8,7 +8,6 @@ import { sendMessage } from '../../api/send-message.js';
 
 function Help() {
 
-    //const apiKey = process.env.REACT_APP_API_KEY;
     const {getAccessToken} = useAuthContext();
 
     const [message, setMessage] = useState('');
