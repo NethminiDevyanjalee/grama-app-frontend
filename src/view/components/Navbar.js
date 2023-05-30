@@ -40,8 +40,8 @@ function Navbar() {
   return (
     <div>
       <nav className="navbar">
+      <img src={logo} alt="Logo" className='logo'/>
           <AuthenticatedComponent>
-            <img src={logo} alt="Logo" className='logo'/>
             <Box className="nav-item" sx={{ width: '100%' }}>
               <Tabs indicatorColor={"inherit"} textColor={"inherit"} value={value} onChange={handleChange} aria-label="nav tabs example">
                 <Tab label="Home" component={NavLink} to="/home" sx={{marginLeft: '350px'}}/>

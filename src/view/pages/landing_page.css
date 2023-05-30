@@ -32,6 +32,7 @@
 .landing-left-column {
     flex: 1;
     z-index: 1;
+    margin-bottom: 300px;
 }
 
 .arrow-icon {
