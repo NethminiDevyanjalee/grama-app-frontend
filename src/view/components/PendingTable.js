@@ -1,4 +1,4 @@
-import * as React from "react";
+import {useState,useEffect} from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -8,6 +8,8 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
+import { approveDecline } from '../../api/approve-decline';
+import { useAuthContext } from "@asgardeo/auth-react";
 
 function createData(id, name, idCheck, address, police, status, approve) {
   return { id, name, idCheck, address, police, status, approve };
@@ -55,8 +57,18 @@ const StyledDeclinedButton = styled(Button)`
 `;
 
 export default function PendingTable() {
-  const handleApprove = (id) => {
+const {getAccessToken} = useAuthContext();
+
+  const handleApprove = async (id) => {
     // Handle approve logic for the specific row
+    // approveDecline(at,"A123456789",true);
+    
+    try {
+      const accessToken = await getAccessToken();
+      approveDecline(accessToken,"A123456789",true);
+  } catch (error) {
+      console.error(error);
+  }
     console.log(`Approved: ${id}`);
   };
 
