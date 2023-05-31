@@ -106,15 +106,14 @@ function StatusCheck() {
 
           <div className="progress-bar-container">
             <div className="progress-bar">
-              <div
-                className={`progress-bar-status not-applied ${
-                  statusData === "not applied" ? "active" : ""
+            <div className={`progress-bar-status not-applied ${
+                  !(statusData === "pending" || statusData === "rejected" || statusData === "approved") ? "active" : ""
                 }`}
               >
                 <div
-                  className={`${statusData === "not applied" ? "check" : ""}`}
+                  className={`${!(statusData === "pending" || statusData === "rejected" || statusData === "approved") ? "check" : ""}`}
                   style={{
-                    display: statusData === "not applied" ? "flex" : "none",
+                    display: !(statusData === "pending" || statusData === "rejected" || statusData === "approved") ? "flex" : "none",
                   }}
                 >
                   X
