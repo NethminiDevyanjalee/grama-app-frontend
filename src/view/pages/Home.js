@@ -3,11 +3,40 @@ import classes from './Home.module.css';
 import homeImage from '../../assets/images/homeImage.svg';
 import arrowIcon from '../../assets/images/arrowIcon.png';
 import { useHistory } from 'react-router-dom';
-import React from 'react';
+import { useAuthContext } from "@asgardeo/auth-react";
+import React, { useEffect, useState } from 'react';
 
 export default function Home() {
 
     const history = useHistory();
+    const { isAuthenticated, getBasicUserInfo } = useAuthContext();
+
+    const [isAdmin, setAdmin] = useState(false);
+
+    const handleClick = () => {
+        if (isAdmin) {
+          history.push('/admin');
+        } else {
+          history.push('/apply');
+        }
+    };
+    
+    useEffect(() => {
+    const checkIfAdmin = async () => {
+        try {
+            if (isAuthenticated) {
+            const userInfo = await getBasicUserInfo();
+            if (userInfo.groups && Array.isArray(userInfo.groups)) {
+                setAdmin(userInfo.groups.some(item => item === "Grama_Niladari"));
+            }
+            }
+        } catch (error) {
+            console.error("Error fetching user details:", error);
+        }
+        };
+        
+    checkIfAdmin();
+    }, [isAuthenticated, getBasicUserInfo]);
 
     return (
         <div className={`${main.gramaApp} ${classes.root}`}>
@@ -30,11 +59,15 @@ export default function Home() {
             <div className={classes.homeImage}>
                 <img src={homeImage} alt="HomeImage" className={classes.homeIcon} />
             </div>
-            <button className={classes.homeApplyButton} onClick={() => history.push('/apply')}>
+            <button className={classes.homeApplyButton} onClick={handleClick}>
                 <div className={classes.applyButton}></div>
                 <div className={classes.applyFrame}>
-                    <div className={classes.applyDescription}>APPLY</div>
-                    <div className={classes.applyIcon}>
+                    {isAdmin ? (
+                        <div className={classes.applyDescription}>Dashboard</div>
+                    ) : (
+                        <div className={classes.applyDescription}>APPLY</div>
+                    )}
+                        <div className={classes.applyIcon}>
                         <img src={arrowIcon} alt="ArrowIcon" className={classes.homeIcon} />
                     </div>
                 </div>

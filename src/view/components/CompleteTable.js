@@ -115,23 +115,7 @@ export default function CompleteTable() {
                 <StyledTableCell align="center">{row.address}</StyledTableCell>
                 <StyledTableCell align="center">{row.police}</StyledTableCell>
                 <StyledTableCell align="center">{row.status}</StyledTableCell>
-                <StyledTableCell align="center">
-                  {row.approve === "Approved" ? (
-                    <StyledApprovedButton
-                      variant="contained"
-                      onClick={() => handleApprove(row.id)}
-                    >
-                      Approved
-                    </StyledApprovedButton>
-                  ) : (
-                    <StyledDeclinedButton
-                      variant="contained"
-                      onClick={() => handleDecline(row.id)}
-                    >
-                      Declined
-                    </StyledDeclinedButton>
-                  )}
-                </StyledTableCell>
+                <StyledTableCell align="center">{row.approve}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

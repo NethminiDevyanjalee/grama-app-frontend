@@ -10,7 +10,7 @@ const authConfig = {
   signOutRedirectURL: process.env.REACT_APP_SIGN_OUT_REDIRECT_URL,
   clientID: process.env.REACT_APP_ASGARDEO_CLIENT_ID,
   baseUrl: process.env.REACT_APP_ASGARDEO_BASE_URL,
-  scope: ["openid", "profile"],
+  scope: ["openid", "profile", "email", "phone", "groups", "roles", "NIC"],
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

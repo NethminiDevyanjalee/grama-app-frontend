@@ -35,7 +35,7 @@ const rows = [
   createData("129V", "A.N.Perera", "Pass", "Fail", "Pass", "Fail", "Declined"),
   createData("234V", "K.P.Kumara", "Pass", "Pass", "Fail", "Pass", "Declined"),
   createData(
-    "123V",
+    "120V",
     "B.B.C.Fernando",
     "Pass",
     "Fail",
@@ -68,14 +68,14 @@ export default function PendingTable() {
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 1200 }} aria-label="simple table">
         <TableHead>
-          <TableRow>
-            <TableCell>ID</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell align="center">ID Check</TableCell>
-            <TableCell align="center">Address Check</TableCell>
-            <TableCell align="center">Police Check</TableCell>
-            <TableCell align="center">Certificate Status</TableCell>
-            <TableCell align="center">Accept/Decline</TableCell>
+          <TableRow style={{ backgroundColor: '#294A84'}}>
+            <TableCell style={{ color: 'white' }}>ID</TableCell>
+            <TableCell style={{ color: 'white' }}>Name</TableCell>
+            <TableCell align="center" style={{ color: 'white' }}>ID Check</TableCell>
+            <TableCell align="center" style={{ color: 'white' }}>Address Check</TableCell>
+            <TableCell align="center" style={{ color: 'white' }}>Police Check</TableCell>
+            <TableCell align="center" style={{ color: 'white' }}>Certificate Status</TableCell>
+            <TableCell align="center" style={{ color: 'white' }}>Accept/Decline</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
