@@ -33,6 +33,7 @@ function UserProfileDetails() {
           setLastName(userInfo?.familyName || "");
           setEmail(userInfo?.email || "");
           setMobileNumber(userInfo?.phoneNumber || "");
+          setProfilePicture(userInfo?.picture || "");
         }
       } catch (error) {
         console.error("Error fetching user details:", error);
@@ -194,7 +195,7 @@ function UserProfileDetails() {
               <img
                 className="ProfilePic"
                 alt=""
-                src={profilePicture ? URL.createObjectURL(profilePicture) : ""}
+                src={profilePicture || ""}
                 style={{
                   maxWidth: "100%",
                   maxHeight: "200px",
